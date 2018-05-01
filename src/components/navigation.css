@@ -1,0 +1,38 @@
+
+.navigation-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.navigation-item {
+    display: flex;
+    justify-content: space-around;
+    flex-grow: 1;
+}
+
+.navigation-item::after {
+    content: "|"
+}
+
+.navigation-item:last-child::after {
+    display: none;
+}
+
+.navigation-link {
+    text-decoration: none;
+    color: white;
+}
+
+.navigation-link-backlit {
+    text-decoration: none;
+    color: black;
+}
+
+.navigation-link:hover {
+    text-decoration: underline;
+    color: rgb(54, 119, 57);
+}
+
