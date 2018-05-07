@@ -2,26 +2,56 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import Navigation from '../components/navigation'
+import Img from "gatsby-image";
 
 // import '../css/index.css' // add some style if you want!
-
+ 
 export default function Index({
   data
 }) {
   const { edges: posts } = data.allMarkdownRemark
+  console.log("DATA IS ",data)
   return (
-    <div className="blog-posts" style={{zIndex: 1, position: 'relative'}}>
+    <div>
+    {/* <div style={{position: 'absolute', top: '0', left: '0', width: '100%', height: '600px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+    <Img
+    title="Background image"
+    style={{
+      position: 'absolute',
+      left: '25%',
+      top: '100px',
+      border: '1px solid red',
+      width: "400px",
+      height: "400px",
+      zIndex: '2'
+    }}
+    alt="View of a calm ocean washed in pink"
+    sizes={data.hollowCircleImage.sizes}
+  />
+    <Img
+    title="Background image"
+    style={{
+      border: '1px solid red',
+      width: "400px",
+      height: "400px",
+      zIndex: '1'
+    }}
+    alt="View of a calm ocean washed in pink"
+    sizes={data.darkHollowCircleImage.sizes}
+  />
+  </div> */}
+    <div className="blog-posts" style={{zIndex: 1, position: 'absolute', marginTop: '30px'}}>
       {posts
         .filter(post => post.node.frontmatter.title.length > 0)
         .map(({ node: post }) => {
           return (
-            <div className="blog-post-preview" key={post.id}>
-              <h2>{post.frontmatter.date}</h2>
-              <Navigation />
-              <p>{lorem}</p>
-            </div>
+              <div className="blog-post-preview" key={post.id}>
+                <h2>{post.frontmatter.date}</h2>
+                <p>{lorem}</p>
+              </div>
           )
         })}
+    </div>
     </div>
   )
 }
@@ -40,8 +70,19 @@ export const pageQuery = graphql`
           }
         }
       }
-    }
-  }`
+    },
+    hollowCircleImage: imageSharp(id: { regex: "/circle-fade-out-hollow/" }) {
+      sizes(maxWidth: 1240 ) {
+        ...GatsbyImageSharpSizes
+      }
+    },
+    darkHollowCircleImage: imageSharp(id: { regex: "/circle-fade-out-hollow-darkened/" }) {
+      sizes(maxWidth: 1240 ) {
+        ...GatsbyImageSharpSizes
+      }
+    },
+  }
+  `
 
   const lorem = `The standard Lorem Ipsum passage, used since the 1500s
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."

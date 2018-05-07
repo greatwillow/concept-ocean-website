@@ -1,0 +1,10 @@
+
+.page-container {
+    display: absolute;
+    top: -400px;
+    left: 50px;
+    right: 50px;
+    border-radius: 10px;
+    background-color: green;
+    z-index: 100;
+}

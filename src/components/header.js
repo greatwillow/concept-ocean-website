@@ -98,15 +98,11 @@ class Header extends Component {
         className="header-outer-container header-animation" 
         style={{
           backgroundColor: this.state.headerBackgroundColor}}>
-        <div className="header-left-container">
-          LEFT
-        </div>
+        <div className="header-left-container"/>
         <div className="header-center-container">
           <Navigation headerBackgroundShown={this.state.headerBackgroundShown}/>
         </div>
-        <div className="header-right-container">
-          RIGHT
-        </div>
+        <div className="header-right-container"/>
     </header>
     <div 
       className="sub-header-outer-container sub-header-1 header-animation"

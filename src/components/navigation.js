@@ -5,6 +5,8 @@ import './navigation.css'
 
 class Navigation extends Component {
 
+    
+
     render() {
         const NavItem = ({ title, to }) => (
             <div className="navigation-item">

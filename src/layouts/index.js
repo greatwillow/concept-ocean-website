@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import Img from "gatsby-image";
+import "./linowrite.ttf"
 
 import Header from '../components/header';
 import './css/main.css'
@@ -21,15 +22,21 @@ const TemplateWrapper = ({children, data}) => (
         style={{
           position: "absolute",
           left: 0,
-          top: 0,
+          top: -100,
           width: "100%",
           height: "100%"
         }}
         alt="View of a calm ocean washed in pink"
         sizes={data.imageSharp.sizes}
       />
+      
       <Header />
-      <div style={{ marginTop: '650px' }}>
+      <div className="subtitle-text-container">
+        <div className="subtitle-text">
+          The works of Gregory Denys
+          </div>
+        </div>
+      <div>      
         {children()}
       </div>
     </div>
@@ -45,7 +52,7 @@ export default TemplateWrapper
 
 export const mainLayoutQuery = graphql`
   query BackgroungImageQuery {
-    imageSharp(id: { regex: "/elliot-mann-pink-ocean/" }) {
+    imageSharp(id: { regex: "/main-logo-with-backdrop/" }) {
       sizes(maxWidth: 1240 ) {
         ...GatsbyImageSharpSizes
       }
