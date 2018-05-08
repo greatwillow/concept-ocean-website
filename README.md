@@ -1,5 +1,6 @@
-# mtlgreen.com website
+# Concept Ocean Website
 
-For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/)
+## Overview
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/mtlgreen/mtlgreen.com)
+This is a personal website demonstrating a portfolio of personal works.  It was created with React, generated as a static site with [Gatsby](https://www.gatsbyjs.org/docs/building-with-components/), and deployed to [Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/mtlgreen/mtlgreen.com)
+

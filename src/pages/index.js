@@ -1,7 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import Helmet from 'react-helmet'
-import Navigation from '../components/navigation'
+import Helmet from 'react-helmet';
 import Img from "gatsby-image";
 
 // import '../css/index.css' // add some style if you want!
@@ -40,12 +39,12 @@ export default function Index({
     sizes={data.darkHollowCircleImage.sizes}
   />
   </div> */}
-    <div className="blog-posts" style={{zIndex: 1, position: 'absolute', marginTop: '30px'}}>
+    <div className="blog-posts" style={{zIndex: 1, position: 'absolute', marginTop: '650px'}}>
       {posts
         .filter(post => post.node.frontmatter.title.length > 0)
         .map(({ node: post }) => {
           return (
-              <div className="blog-post-preview" key={post.id}>
+              <div className="main-text-content-container" key={post.id}>
                 <h2>{post.frontmatter.date}</h2>
                 <p>{lorem}</p>
               </div>
