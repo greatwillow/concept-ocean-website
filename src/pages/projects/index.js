@@ -1,16 +1,15 @@
 import React, { Component } from "react";
 import Link from "gatsby-link";
 import Img from "gatsby-image";
-import './projects.css'
+import CommonPageContainer from "../../components/CommonPageContainer/CommonPageContainer";
+import "./projects.css";
 
 export default class Projects extends Component {
-  
-
   render() {
     return (
-      <div className='page-container'>
-      <p>Project Page</p>
-      {/* <div> 
+      <CommonPageContainer>
+        <p>Project Page</p>
+        {/* <div> 
         {data.projects.edges.map(({ node }) => {
           console.log("NODE ",node);
           console.log("NODE name ",node.name);
@@ -18,28 +17,27 @@ export default class Projects extends Component {
           return (<div key={node.name} ><p>{node.name} node</p></div>);
         })}
       </div> */}
-      {console.log('DATA IS ',this.props.data, 'AND this is ',this)}
-      <div 
-        ref={input => (this.thumbnailImage = input)} 
-        className='image-container'>
-        <Img 
-          className='image-styling' 
-          sizes={{...this.props.data.captainImage.childImageSharp.sizes, aspectRatio: 1/1}}/>
-      </div>
-    </div>
+        {console.log("DATA IS ", this.props.data, "AND this is ", this)}
+        <div className="image-container">
+          <Img
+            className="image-styling"
+            sizes={{
+              ...this.props.data.captainImage.childImageSharp.sizes,
+              aspectRatio: 1 / 1
+            }}
+          />
+        </div>
+      </CommonPageContainer>
     );
   }
-} 
-
-
-
+}
 
 export const projectQuery = graphql`
   query GatsbyImageSampleQuery {
     captainImage: file(relativePath: { eq: "pages/projects/shipCaptain.jpg" }) {
-        childImageSharp {
-          sizes(maxWidth: 500) {
-            ...GatsbyImageSharpSizes
+      childImageSharp {
+        sizes(maxWidth: 500) {
+          ...GatsbyImageSharpSizes
         }
       }
     }
@@ -54,7 +52,7 @@ export const projectQuery = graphql`
   #     }
   #   }
   # }
-`
+`;
 
 /*
 export const query = graphql`

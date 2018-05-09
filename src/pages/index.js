@@ -1,58 +1,27 @@
-import React from 'react'
-import Link from 'gatsby-link'
-import Helmet from 'react-helmet';
+import React from "react";
+import Link from "gatsby-link";
+import Helmet from "react-helmet";
 import Img from "gatsby-image";
 
-// import '../css/index.css' // add some style if you want!
- 
-export default function Index({
-  data
-}) {
-  const { edges: posts } = data.allMarkdownRemark
-  console.log("DATA IS ",data)
+export default function Index({ data }) {
+  const { edges: posts } = data.allMarkdownRemark;
+  console.log("DATA IS ", data);
   return (
     <div>
-    {/* <div style={{position: 'absolute', top: '0', left: '0', width: '100%', height: '600px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-    <Img
-    title="Background image"
-    style={{
-      position: 'absolute',
-      left: '25%',
-      top: '100px',
-      border: '1px solid red',
-      width: "400px",
-      height: "400px",
-      zIndex: '2'
-    }}
-    alt="View of a calm ocean washed in pink"
-    sizes={data.hollowCircleImage.sizes}
-  />
-    <Img
-    title="Background image"
-    style={{
-      border: '1px solid red',
-      width: "400px",
-      height: "400px",
-      zIndex: '1'
-    }}
-    alt="View of a calm ocean washed in pink"
-    sizes={data.darkHollowCircleImage.sizes}
-  />
-  </div> */}
-    <div className="blog-posts" style={{zIndex: 1, position: 'absolute', marginTop: '650px'}}>
-      {posts
-        .filter(post => post.node.frontmatter.title.length > 0)
-        .map(({ node: post }) => {
-          return (
+      <div style={{ zIndex: 1, position: "absolute", marginTop: "650px" }}>
+        {posts
+          .filter(post => post.node.frontmatter.title.length > 0)
+          .map(({ node: post }) => {
+            return (
               <div className="main-text-content-container" key={post.id}>
                 <h2>{post.frontmatter.date}</h2>
                 <p>{lorem}</p>
               </div>
-          )
-        })}
+            );
+          })}
+      </div>
     </div>
-    </div>
-  )
+  );
 }
 
 export const pageQuery = graphql`
@@ -69,21 +38,23 @@ export const pageQuery = graphql`
           }
         }
       }
-    },
+    }
     hollowCircleImage: imageSharp(id: { regex: "/circle-fade-out-hollow/" }) {
-      sizes(maxWidth: 1240 ) {
+      sizes(maxWidth: 1240) {
         ...GatsbyImageSharpSizes
       }
-    },
-    darkHollowCircleImage: imageSharp(id: { regex: "/circle-fade-out-hollow-darkened/" }) {
-      sizes(maxWidth: 1240 ) {
+    }
+    darkHollowCircleImage: imageSharp(
+      id: { regex: "/circle-fade-out-hollow-darkened/" }
+    ) {
+      sizes(maxWidth: 1240) {
         ...GatsbyImageSharpSizes
       }
-    },
+    }
   }
-  `
+`;
 
-  const lorem = `The standard Lorem Ipsum passage, used since the 1500s
+const lorem = `The standard Lorem Ipsum passage, used since the 1500s
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   
   Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
@@ -96,4 +67,4 @@ export const pageQuery = graphql`
   "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."
   
   1914 translation by H. Rackham
-  "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains."`
+  "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains."`;

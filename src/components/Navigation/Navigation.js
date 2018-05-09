@@ -32,7 +32,6 @@ class Navigation extends Component {
                 <NavItem to="/" title="Home"/>
                 <NavItem to="/about/" title="About"/>
                 <NavItem to="/projects/" title="Dev Projects"/>
-                <NavItem to="/dev-resume/" title="Dev Resumé"/>
             </div>
         )
     }
