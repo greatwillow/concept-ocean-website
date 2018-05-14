@@ -1,0 +1,49 @@
+.focus-main-container {
+  width: 100%;
+  height: 200px;
+}
+
+.focus-container {
+  display: flex;
+  color: white;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.inner-container-1 {
+  height: 100px;
+  background-color: rgba(0, 64, 78, 0.9);
+}
+
+.inner-container-2 {
+  height: 60px;
+  background-color: rgba(0, 64, 78, 0.7);
+}
+
+.inner-container-3 {
+  height: 40px;
+  background-color: rgba(0, 64, 78, 0.5);
+}
+
+.percent-text {
+  padding-left: 10px;
+  padding-right: 20px;
+  width: 100%;
+}
+
+.percent-text-1 {
+  font-size: 50px;
+}
+
+.percent-text-2 {
+  font-size: 40px;
+}
+
+.percent-text-3 {
+  font-size: 15px;
+}
+
+.description-text {
+  width: 50%;
+}

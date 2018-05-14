@@ -1,61 +1,69 @@
-import React, {Component} from 'react'
-import PropTypes from 'prop-types'
-import Link from 'gatsby-link'
-import Helmet from 'react-helmet'
-import Img from "gatsby-image";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import Link from 'gatsby-link';
+import Helmet from 'react-helmet';
+import Img from 'gatsby-image';
 
 import Header from '../components/Header/Header';
-import './css/main.css'
+import './css/main.css';
 
-const TemplateWrapper = ({children, data}) => (
-      <div>
-      <Helmet
-        title="Concept Ocean"
-        meta={[
-          { name: 'description', content: 'Sample' },
-          { name: 'keywords', content: 'sample, something' },
-        ]}
-      />
-      <Img
-        title="Background image"
-        style={{
-          position: "absolute",
-          left: '0',
-          top: '-100px',
-          width: "100%",
-          height: "100%",
-          zIndex: '-1'
-        }}
-        alt="View of a calm ocean washed in pink"
-        sizes={data.imageSharp.sizes}
-      />
-      
-      <Header />
-      <div className="subtitle-text-container">
-        <div className="subtitle-text">
-           creative projects of gregory denys
-          </div>
-        </div>
-      <div>      
-        {children()}
+const TemplateWrapper = ({ children, data }) => (
+  <div>
+    <Helmet
+      title="Concept Ocean"
+      meta={[
+        { name: 'description', content: 'Sample' },
+        { name: 'keywords', content: 'sample, something' }
+      ]}
+    />
+    <div className="logo-outer-container">
+      <div className="logo-text">
+        C_<br />_O
       </div>
     </div>
+    <div className="title-container">
+      <div className="title-text">Concept Ocean</div>
+      <div className="subtitle-text">Projects of Gregory Denys</div>
+    </div>
+    <Img
+      title="Background image"
+      style={{
+        position: 'absolute',
+        left: '0',
+        top: '250px',
+        width: '100%',
+        height: '40%',
+        // height: "100%",
+        backgroundColor: '#f2f7fa',
+        paddingTop: '250px',
+        zIndex: '-2'
+      }}
+      alt="View of a calm ocean washed in pink"
+      sizes={{
+        ...data.backgroundImage.childImageSharp.sizes,
+        aspectRatio: 1 / 1
+      }}
+    />
+
+    <Header />
+    <div>{children()}</div>
+  </div>
 );
 
 TemplateWrapper.propTypes = {
-  children: PropTypes.func,
-}
+  children: PropTypes.func
+};
 
-
-
-export default TemplateWrapper
+export default TemplateWrapper;
 
 export const mainLayoutQuery = graphql`
   query BackgroundImageQuery {
-    imageSharp(id: { regex: "/main-logo-with-backdrop/" }) {
-      sizes(maxWidth: 1240 ) {
-        ...GatsbyImageSharpSizes
+    backgroundImage: file(relativePath: { eq: "img/pure-ocean.png" }) {
+      childImageSharp {
+        sizes(maxWidth: 2000) {
+          ...GatsbyImageSharpSizes
+        }
       }
     }
   }
-`
+`;

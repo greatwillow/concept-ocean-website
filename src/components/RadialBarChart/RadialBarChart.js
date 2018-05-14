@@ -1,59 +1,108 @@
-import React, { Component } from "react";
-import { RadialBarChart, RadialBar, Label, Legend, ResponsiveContainer } from "recharts";
-
-const data = [
-  { name: "18-24", uv: 60, amt: 31.47, pv: 2400, fill: "#8884d8" },
-  { name: "25-29", uv: 50, amt: 26.69, pv: 4500, fill: "#83a6ed" },
-  { name: "30-34", uv: 30, amt: 15.69, pv: -1398, fill: "#8dd1e1" },
-  { name: "35-39", uv: 59, amt: 8.22, pv: 2800, fill: "#82ca9d" },
-  { name: "40-49", uv: 48, amt: 8.63, pv: 1908, fill: "#a4de6c" },
-  { name: "50+", uv: 62, amt: 2.63, pv: -2800, fill: "#d0ed57" },
-  { name: "unknow", uv: 38, amt: 6.67, pv: 4800, fill: "#ffc658" }
-];
-
-const initialState = { data };
+import React, { Component } from 'react';
+import {
+  PolarAngleAxis,
+  RadialBarChart,
+  RadialBar,
+  Legend,
+  ResponsiveContainer
+} from 'recharts';
 
 export default class RadialChart extends Component {
-  static displayName = "RadialBarChartDemo";
+  constructor() {
+    super();
+    this.state = {
+      chartWidth: null,
+      chartHeight: null,
+      chartDisplay: null,
+      legendWidth: null,
+      legendSpacing: null
+    };
+  }
 
-  state = initialState;
+  componentDidMount() {
+    this.updateChartLayout();
+    window.addEventListener('resize', this.updateChartLayout);
+  }
+
+  updateChartLayout = () => {
+    if (window.innerWidth >= 600) {
+      this.setState({
+        chartWidth: '60%',
+        chartHeight: '300px',
+        chartDisplay: 'row',
+        legendWidth: '40%',
+        legendSpacing: '10px'
+      });
+    } else {
+      this.setState({
+        chartWidth: '100%',
+        chartHeight: '400px',
+        chartDisplay: 'column',
+        legendWidth: '100%',
+        legendSpacing: '0px'
+      });
+    }
+  };
 
   render() {
-    const { data } = this.state;
-    const style = {
-      position: "absolute",
-      lineHeight: "20px",
-      right: "16%",
-      bottom: "7%"
-    };
-
-    const label = {
-      orientation: "outer"
-    };
-
+    let newData = this.props.data.map(item => {
+      return item;
+    });
     return (
-      <div style={{ width: "100%", height: "50vh" }}>
-        <ResponsiveContainer>
-          <RadialBarChart
-            innerRadius={20}
-            outerRadius={160}
-            data={data}
-            startAngle={-90}
-            endAngle={-360}
-          >
-            <RadialBar background dataKey="pv">
-              <Label position="insideBottomRight" />
-            </RadialBar>
-            <Legend
-              iconSize={16}
-              width={120}
-              height={140}
-              layout="vertical"
-              wrapperStyle={style}
-            />
-            {/* <Tooltip/> */}
-          </RadialBarChart>
-        </ResponsiveContainer>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: this.state.chartDisplay,
+          height: this.state.chartHeight
+        }}
+      >
+        <div
+          style={{
+            height: '100px',
+            width: this.state.legendWidth
+          }}
+        >
+          {newData.reverse().map(item => {
+            return (
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  marginLeft: '50px',
+                  padding: this.state.legendSpacing
+                }}
+              >
+                <div
+                  style={{
+                    width: '20px',
+                    height: '15px',
+                    backgroundColor: item.fill
+                  }}
+                />
+                <div style={{ marginLeft: '10px' }}>{item.name}</div>
+              </div>
+            );
+          })}
+        </div>
+        <div
+          style={{
+            width: this.state.chartWidth,
+            height: '300px'
+          }}
+        >
+          <ResponsiveContainer width={'100%'} height={300}>
+            <RadialBarChart
+              innerRadius={20}
+              outerRadius={120}
+              data={this.props.data}
+              startAngle={270}
+              endAngle={0}
+            >
+              <PolarAngleAxis type="number" domain={[0, 100]} />
+              <RadialBar background dataKey="pv" />
+            </RadialBarChart>
+          </ResponsiveContainer>
+        </div>
       </div>
     );
   }
