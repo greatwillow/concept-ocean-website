@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Concept Ocean',
+    title: 'Concept Ocean'
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -26,11 +26,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sass`,
       options: {
-        precision: 8,
-      },
+        precision: 8
+      }
     },
 
     //JSON TRANSFORMER
+    `gatsby-transformer-remark`,
+
     `gatsby-transformer-json`,
 
     //MARKDOWN TRANSFORMER
@@ -52,27 +54,7 @@ module.exports = {
         ]
       }
     },
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-
-    //IMAGES AND SHARP
-    // {
-    //   resolve: `gatsby-plugin-favicon`,
-    //   options: {
-    //     logo: "./src/favicon.png",
-    //     injectHTML: true,
-    //     icons: {
-    //       android: true,
-    //       appleIcon: true,
-    //       appleStartup: true,
-    //       coast: false,
-    //       favicons: true,
-    //       firefox: true,
-    //       twitter: false,
-    //       yandex: false,
-    //       windows: false
-    //     }
-    //   }
-    // }
+    `gatsby-transformer-sharp`
   ]
-}
+};

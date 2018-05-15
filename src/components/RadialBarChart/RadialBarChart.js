@@ -58,6 +58,7 @@ export default class RadialChart extends Component {
       >
         <div
           style={{
+            paddingTop: '20px',
             height: '100px',
             width: this.state.legendWidth
           }}
@@ -95,8 +96,8 @@ export default class RadialChart extends Component {
               innerRadius={20}
               outerRadius={120}
               data={this.props.data}
-              startAngle={270}
-              endAngle={0}
+              startAngle={265}
+              endAngle={-85}
             >
               <PolarAngleAxis type="number" domain={[0, 100]} />
               <RadialBar background dataKey="pv" />

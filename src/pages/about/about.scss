@@ -1,0 +1,58 @@
+@import '../../styles/variables.scss';
+
+.profile-image {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  border-radius: 50%;
+  width: 150px;
+}
+
+@media (max-width: 480px) {
+  .profile-image {
+    width: 150px;
+  }
+}
+
+.about-section-container {
+  height: 100%;
+  padding-top: 50px;
+  padding-bottom: 90px;
+}
+
+.about-section-title {
+  font-size: 25px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+#about-head-section {
+  display: inline-block;
+  height: 250px;
+  width: 100%;
+  .about-name-and-title-container {
+    position: absolute;
+    margin-top: 30px;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    transform: translate(-50%, 0);
+    font-size: 20px;
+    text-align: center;
+  }
+  .about-title-container {
+    font-size: 15px;
+    margin-top: 5px;
+  }
+}
+
+#about-summary-section {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+#about-end-section {
+  margin-left: 40px;
+  margin-right: 40px;
+}

@@ -1,40 +1,45 @@
-const path = require('path')
+// const path = require(`path`);
 
-exports.createPages = ({ boundActionCreators, graphql }) => {
-  const { createPage } = boundActionCreators
+// const { createFilePath } = require(`gatsby-source-filesystem`);
 
-  const blogPostTemplate = path.resolve(`src/templates/blog-post.js`)
+// exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
+//   const { createNodeField } = boundActionCreators;
+//   if (node.internal.type === `MarkdownRemark`) {
+//     const slug = createFilePath({ node, getNode, basePath: `dev-projects` });
+//     createNodeField({
+//       node,
+//       name: `slug`,
+//       value: slug
+//     });
+//   }
+// };
 
-  return graphql(`{
-      allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 1000
-      ) {
-        edges {
-          node {
-            excerpt(pruneLength: 250)
-            html
-            id
-            frontmatter {
-              date
-              path
-              title
-            }
-          }
-        }
-      }
-    }`
-  ).then(result => {
-    if (result.errors) {
-      return Promise.reject(result.errors)
-    }
-
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      createPage({
-        path: node.frontmatter.path,
-        component: blogPostTemplate,
-        context: {} // additional data can be passed via context
-      })
-    })
-  })
-}
+// exports.createPages = ({ graphql, boundActionCreators }) => {
+//   const { createPage } = boundActionCreators;
+//   return new Promise((resolve, reject) => {
+//     graphql(`
+//       {
+//         allMarkdownRemark {
+//           edges {
+//             node {
+//               fields {
+//                 slug
+//               }
+//             }
+//           }
+//         }
+//       }
+//     `).then(result => {
+//       result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+//         createPage({
+//           path: node.fields.slug,
+//           component: path.resolve(`./src/templates/DevProjectTemplate.js`),
+//           context: {
+//             slug: node.fields.slug
+//           }
+//         });
+//       });
+//       resolve();
+//     });
+//   });
+// };
