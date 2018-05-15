@@ -1,23 +1,15 @@
-import React, { Component } from "react";
-import Link from "gatsby-link";
-import Img from "gatsby-image";
-import CommonPageContainer from "../../components/CommonPageContainer/CommonPageContainer";
-import "./projects.css";
+import React, { Component } from 'react';
+import Link from 'gatsby-link';
+import Img from 'gatsby-image';
+import CommonPageContainer from '../../components/CommonPageContainer/CommonPageContainer';
+import './projects.css';
 
 export default class Projects extends Component {
   render() {
     return (
       <CommonPageContainer>
         <p>Project Page</p>
-        {/* <div> 
-        {data.projects.edges.map(({ node }) => {
-          console.log("NODE ",node);
-          console.log("NODE name ",node.name);
-  
-          return (<div key={node.name} ><p>{node.name} node</p></div>);
-        })}
-      </div> */}
-        {console.log("DATA IS ", this.props.data, "AND this is ", this)}
+        {console.log('DATA IS ', this.props.data, 'AND this is ', this)}
         <div className="image-container">
           <Img
             className="image-styling"
@@ -42,16 +34,6 @@ export const projectQuery = graphql`
       }
     }
   }
-  # query AllFileQuery {
-  #   allFile {
-  #     edges {
-  #       node {
-  #         name,
-  #         relativePath
-  #       }
-  #     }
-  #   }
-  # }
 `;
 
 /*

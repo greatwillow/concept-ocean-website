@@ -13,17 +13,17 @@
 
 .inner-container-1 {
   height: 100px;
-  background-color: rgba(0, 64, 78, 0.9);
+  background-color: rgba(0, 64, 78, 0.8);
 }
 
 .inner-container-2 {
   height: 60px;
-  background-color: rgba(0, 64, 78, 0.7);
+  background-color: rgba(0, 64, 78, 0.6);
 }
 
 .inner-container-3 {
-  height: 40px;
-  background-color: rgba(0, 64, 78, 0.5);
+  height: 50px;
+  background-color: rgba(0, 64, 78, 0.4);
 }
 
 .percent-text {

@@ -5,7 +5,8 @@ import Helmet from 'react-helmet';
 import Img from 'gatsby-image';
 
 import Header from '../components/Header/Header';
-import './css/main.css';
+import Footer from '../components/Footer/Footer';
+import './main-layout.scss';
 
 const TemplateWrapper = ({ children, data }) => (
   <div>
@@ -25,7 +26,8 @@ const TemplateWrapper = ({ children, data }) => (
       <div className="title-text">Concept Ocean</div>
       <div className="subtitle-text">Projects of Gregory Denys</div>
     </div>
-    <Img
+
+    {/* <Img
       title="Background image"
       style={{
         position: 'absolute',
@@ -33,8 +35,6 @@ const TemplateWrapper = ({ children, data }) => (
         top: '250px',
         width: '100%',
         height: '40%',
-        // height: "100%",
-        backgroundColor: '#f2f7fa',
         paddingTop: '250px',
         zIndex: '-2'
       }}
@@ -43,10 +43,12 @@ const TemplateWrapper = ({ children, data }) => (
         ...data.backgroundImage.childImageSharp.sizes,
         aspectRatio: 1 / 1
       }}
-    />
+    /> */}
 
     <Header />
+
     <div>{children()}</div>
+    {/* <Footer /> */}
   </div>
 );
 
