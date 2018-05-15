@@ -5,7 +5,7 @@ import Helmet from 'react-helmet';
 import Img from 'gatsby-image';
 
 import Header from '../components/Header/Header';
-import './css/main.css';
+import './main-layout.scss';
 
 const TemplateWrapper = ({ children, data }) => (
   <div>

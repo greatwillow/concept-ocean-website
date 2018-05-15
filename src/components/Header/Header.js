@@ -1,84 +1,82 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import Link from "gatsby-link";
-import Navigation from "../Navigation/Navigation";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import Link from 'gatsby-link';
+import Navigation from '../Navigation/Navigation';
 
-import "./header.css";
+import './header.scss';
 
 class Header extends Component {
   constructor() {
     super();
     this.state = {
       headerBackgroundShown: false,
-      headerBackgroundColor: "transparent",
-      subHeader1BackgroundColor: "transparent",
-      subHeader2BackgroundColor: "transparent",
-      subHeader3BackgroundColor: "transparent",
-      subHeader4BackgroundColor: "transparent",
-      subHeader5BackgroundColor: "transparent"
+      headerBackgroundColor: 'transparent',
+      subHeader1BackgroundColor: 'transparent',
+      subHeader2BackgroundColor: 'transparent',
+      subHeader3BackgroundColor: 'transparent',
+      subHeader4BackgroundColor: 'transparent',
+      subHeader5BackgroundColor: 'transparent'
     };
   }
 
   componentDidMount() {
     //SETTING HEADER DYNAMIC PROPERTIES
-    const myVar = "sub";
-
     window.onscroll = () => {
       if (window.scrollY > 50) {
         this.setState({
-          headerBackgroundColor: "rgba(0,64,78,0.9)",
+          headerBackgroundColor: 'rgba(0,64,78,0.9)',
           headerBackgroundShown: true
         });
       } else {
         this.setState({
-          headerBackgroundColor: "transparent",
+          headerBackgroundColor: 'transparent',
           headerBackgroundShown: false
         });
       }
 
-      if (window.scrollY > 150 && window.scrollY < 600) {
+      if (window.scrollY > 100 && window.scrollY < 425) {
         this.setState({
-          subHeader1BackgroundColor: "rgba(256, 256, 256, 0.8)"
+          subHeader1BackgroundColor: 'rgba(0,64,78, 0.5)'
         });
       } else {
         this.setState({
-          subHeader1BackgroundColor: "transparent"
+          subHeader1BackgroundColor: 'transparent'
         });
       }
-      if (window.scrollY > 200 && window.scrollY < 550) {
+      if (window.scrollY > 150 && window.scrollY < 400) {
         this.setState({
-          subHeader2BackgroundColor: "rgba(256, 256, 256, 0.6)"
+          subHeader2BackgroundColor: 'rgba(0,64,78, 0.4)'
         });
       } else {
         this.setState({
-          subHeader2BackgroundColor: "transparent"
+          subHeader2BackgroundColor: 'transparent'
         });
       }
-      if (window.scrollY > 250 && window.scrollY < 500) {
+      if (window.scrollY > 200 && window.scrollY < 375) {
         this.setState({
-          subHeader3BackgroundColor: "rgba(256, 256, 256, 0.4)"
+          subHeader3BackgroundColor: 'rgba(0,64,78, 0.3)'
         });
       } else {
         this.setState({
-          subHeader3BackgroundColor: "transparent"
+          subHeader3BackgroundColor: 'transparent'
         });
       }
-      if (window.scrollY > 300 && window.scrollY < 450) {
+      if (window.scrollY > 250 && window.scrollY < 350) {
         this.setState({
-          subHeader4BackgroundColor: "rgba(256, 256, 256, 0.2)"
+          subHeader4BackgroundColor: 'rgba(0,64,78, 0.2)'
         });
       } else {
         this.setState({
-          subHeader4BackgroundColor: "transparent"
+          subHeader4BackgroundColor: 'transparent'
         });
       }
-      if (window.scrollY > 350 && window.scrollY < 400) {
+      if (window.scrollY > 300 && window.scrollY < 325) {
         this.setState({
-          subHeader5BackgroundColor: "rgba(256, 256, 256, 0.1)"
+          subHeader5BackgroundColor: 'rgba(0,64,78, 0.1)'
         });
       } else {
         this.setState({
-          subHeader5BackgroundColor: "transparent"
+          subHeader5BackgroundColor: 'transparent'
         });
       }
     };
@@ -86,7 +84,7 @@ class Header extends Component {
 
   render() {
     return (
-      <div style={{ display: "flex", flexDirection: "column" }}>
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
         <header
           className="header-outer-container header-animation"
           style={{

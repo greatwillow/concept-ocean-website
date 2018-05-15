@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Concept Ocean',
+    title: 'Concept Ocean'
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -10,28 +10,29 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/src/`,
-        name: 'src'
+        name: 'src',
+        path: `${__dirname}/src/`
       }
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `projects`,
-        path: `${__dirname}/src/pages/projects`
-      }
-    },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `projects`,
+    //     path: `${__dirname}/src/pages/projects`
+    //   }
+    // },
 
     //STYLING
     {
       resolve: `gatsby-plugin-sass`,
       options: {
-        precision: 8,
-      },
+        precision: 8
+      }
     },
 
     //JSON TRANSFORMER
     `gatsby-transformer-json`,
+    'gatsby-transformer-remark',
 
     //MARKDOWN TRANSFORMER
     {
@@ -53,7 +54,7 @@ module.exports = {
       }
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    `gatsby-plugin-sharp`
 
     //IMAGES AND SHARP
     // {
@@ -75,4 +76,4 @@ module.exports = {
     //   }
     // }
   ]
-}
+};
