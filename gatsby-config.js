@@ -14,13 +14,13 @@ module.exports = {
         path: `${__dirname}/src/`
       }
     },
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `projects`,
-    //     path: `${__dirname}/src/pages/projects`
-    //   }
-    // },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `dev-projects`,
+        path: `${__dirname}/src/pages/dev-projects`
+      }
+    },
 
     //STYLING
     {

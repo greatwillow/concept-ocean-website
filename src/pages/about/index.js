@@ -3,9 +3,12 @@ import CommonPageContainer from '../../components/CommonPageContainer/CommonPage
 import RadialBarChart from '../../components/RadialBarChart/RadialBarChart';
 import BarChart from '../../components/BarChart/BarChart';
 import FocusAreas from '../../components/FocusAreas/FocusAreas';
+import ContactForm from '../../components/ContactForm/ContactForm';
 import Img from 'gatsby-image';
+import Overdrive from 'react-overdrive';
 
 import { languageSkillsData, javascriptSkillsData } from './aboutPageData';
+import '../../styles/base.scss';
 import './about.scss';
 
 export default class DevResume extends Component {
@@ -28,61 +31,61 @@ export default class DevResume extends Component {
             </div>
           </section>
           <hr />
-          <section id="about-summary-section" className="about-section-container">
-            <div className="about-section-title">Summary</div>
-            <p>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I am a software developer with a
-              background knowledge coming from both University and personal studies. When
-              working on projects, I am passionate about making beautiful and engaging
-              experiences that communicate to the user in a clear and effective way. My
-              background is firmly planted in both the sciences and arts and I draw from
-              each field as part of the development process.
-            </p>
-            <p>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Technically, I am interested in working
-              with elegant solutions that look to optimize performance as well as user and
-              developer experience. My focus is on React, Redux, React Native, Node.Js,
-              and other technologies centered around this stack. Other technologies I am
-              exploring include Gatsby.Js, GraphQL and Rx.Js.
-            </p>
-            <p>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As part of a team, I aim to bring value
-              to those I work with through every interaction while always being happy to
-              listen to and work with the ideas of everyone involved.
-            </p>
+          <section className="about-section-container page-section-spacing">
+            <div className="page-section-title">Summary</div>
+            <div className="page-section-text">
+              <p>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I am a software developer with a
+                background knowledge coming from both University and personal studies.
+                When working on projects, I am passionate about making beautiful and
+                engaging experiences that communicate to the user in a clear and effective
+                way. My background is firmly planted in both the sciences and arts and I
+                draw from each field as part of the development process.
+              </p>
+              <p>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Technically, I am interested in
+                working with elegant solutions that look to optimize performance as well
+                as user and developer experience. My focus is on React, Redux, React
+                Native, Node.Js, and other technologies centered around this stack. Other
+                technologies I am exploring include Gatsby.Js, GraphQL and Rx.Js.
+              </p>
+              <p>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As part of a team, I aim to bring
+                value to those I work with through every interaction while always being
+                happy to listen to and work with the ideas of everyone involved.
+              </p>
+            </div>
           </section>
           <hr />
-          <section className="about-section-container">
-            <div className="about-section-title">Areas of Focus</div>
+          <section className="about-section-container page-section-spacing">
+            <div className="page-section-title">Areas of Focus</div>
             <FocusAreas />
           </section>
           <hr />
-          <section className="about-section-container">
-            <div className="about-section-title">Language Skills</div>
+          <section className="about-section-container about-chart-section-container page-section-spacing">
+            <div className="page-section-title">Language Skills</div>
             <RadialBarChart data={languageSkillsData} />
           </section>
           <hr />
-          <section className="about-section-container">
-            <div className="about-section-title">Javascript Skills</div>
+          <section className="about-section-container about-chart-section-container page-section-spacing">
+            <div className="page-section-title">Javascript Skills</div>
             <BarChart data={javascriptSkillsData} />
           </section>
           <hr />
-          <section id="about-end-section" className="about-section-container">
-            <div className="about-section-title">Go Further</div>
-            <p>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; When I'm not engaged in the movement of
-              a software project or busy thinking about ideas that can improve our world,
-              I can often be found travelling, rock-climbing, playing music, or enjoying
-              my time learning about others and the world around me. If you're curious to
-              learn more, I would be happy to hear from you. Feel free to send a message
-              and I will get back to you soon.
-            </p>
+          <section className="about-section-container page-section-spacing">
+            <div className="page-section-title">Go Further</div>
+            <div className="page-section-text">
+              <p>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; When I'm not engaged in the movement
+                of a software project or busy thinking about ideas that can improve our
+                world, I can often be found travelling, rock-climbing, playing music, or
+                enjoying my time learning about others and the world around me. If you're
+                curious to learn more, I would be happy to hear from you. Feel free to
+                send a message and I will get back to you soon.
+              </p>
+            </div>
+            <ContactForm />
           </section>
-          <form action="https://formspree.io/gregory.g.denys@gmail.com" method="POST">
-            <input type="text" name="message" />
-            <input type="email" name="email-address" />
-            <input type="submit" value="Send" />
-          </form>
         </div>
       </CommonPageContainer>
     );

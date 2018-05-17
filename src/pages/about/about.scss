@@ -16,15 +16,14 @@
 }
 
 .about-section-container {
-  height: 100%;
-  padding-top: 50px;
   padding-bottom: 90px;
 }
 
-.about-section-title {
-  font-size: 25px;
-  text-align: center;
-  margin-bottom: 50px;
+@media (max-width: 700px) {
+  .about-chart-section-container {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+  }
 }
 
 #about-head-section {
@@ -45,16 +44,4 @@
     font-size: 15px;
     margin-top: 5px;
   }
-}
-
-#about-summary-section {
-  margin-left: 40px;
-  margin-right: 40px;
-  line-height: 30px;
-}
-
-#about-end-section {
-  margin-left: 40px;
-  margin-right: 40px;
-  line-height: 30px;
 }

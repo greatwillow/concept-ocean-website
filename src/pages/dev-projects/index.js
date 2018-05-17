@@ -1,100 +1,49 @@
 import React, { Component } from 'react';
-import Link from 'gatsby-link';
-import Img from 'gatsby-image';
 import CommonPageContainer from '../../components/CommonPageContainer/CommonPageContainer';
-import './projects.scss';
+import ImageGrid from '../../components/ImageGrid/ImageGrid';
 
-export default class Projects extends Component {
+import '../../styles/base.scss';
+import './dev-projects.scss';
+
+class DevProjects extends Component {
   render() {
+    const allDevProjects = this.props.data.allMarkdownRemark.edges;
+
     return (
       <CommonPageContainer>
-        <p>Project Page</p>
-        <div className="image-container">{/* <Img className="image-styling" /> */}</div>
+        <div className="page-head-title">Dev Projects</div>
+        <hr />
+        <div className="card-section-container">
+          <ImageGrid dataArray={allDevProjects} />
+        </div>
       </CommonPageContainer>
     );
   }
 }
 
-// export const devProjectQuery = graphql`
-//   query DevProjectGalleryImageQuery {
-//     allMarkdownRemark: {
-//       edges {
-//         node {
+export default DevProjects;
 
-//         }
-//       }
-//     }
-//   }
-// `;
-
-// query GatsbyImageSampleQuery {
-
-//   captainImage: file(relativePath: { eq: "pages/projects/shipCaptain.jpg" }) {
-//     childImageSharp {
-//       sizes(maxWidth: 500) {
-//         ...GatsbyImageSharpSizes
-//       }
-//     }
-//   }
-// }
-// query AllFileQuery {
-//   allFile {
-//     edges {
-//       node {
-//         name,
-//         relativePath
-//       }
-//     }
-//   }
-// }
-
-// sizes={{
-//   ...this.props.data.captainImage.childImageSharp.sizes,
-//   aspectRatio: 1 / 1 }}
-
-/*
-export const query = graphql`
-  query IndexQuery {
-    projects: allFile(
-      filter: { extension: { eq: "md" }, sourceInstanceName: { eq: "projects" } }
-    ) {
+export const devProjectQuery = graphql`
+  query DevProjectGalleryImageQuery {
+    allMarkdownRemark {
       edges {
         node {
-          childMarkdownRemark {
-            id
-            frontmatter {
-              # title
-              # date(formatString: "DD MMMM, YYYY")
-              thumbnail {
-                childImageSharp {
-                  sizes(maxWidth: 400) {
-                    ...GatsbyImageSharpSizes
-                  }
+          frontmatter {
+            thumbnail {
+              childImageSharp {
+                sizes(maxWidth: 400) {
+                  ...GatsbyImageSharpSizes
                 }
               }
             }
-            fields {
-              slug
-            }
-            excerpt
+            title
+            shortDescription
+          }
+          fields {
+            slug
           }
         }
       }
     }
-    # summary: allFile(filter: { id: { regex: "/summary/" } }) {
-    #   edges {
-    #     node {
-    #       childMarkdownRemark {
-    #         html
-    #       }
-    #     }
-    #   }
-    # }
-    # mugshot: imageSharp(id: { regex: "/mugshot.jpg/" }) {
-    #   sizes(maxWidth: 630) {
-    #     ...GatsbyImageSharpSizes
-    #   }
-    # }
   }
 `;
-*/

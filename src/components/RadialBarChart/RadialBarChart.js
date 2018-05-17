@@ -24,6 +24,10 @@ export default class RadialChart extends Component {
     window.addEventListener('resize', this.updateChartLayout);
   }
 
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateChartLayout);
+  }
+
   updateChartLayout = () => {
     if (window.innerWidth >= 600) {
       this.setState({
@@ -65,6 +69,7 @@ export default class RadialChart extends Component {
           {newData.reverse().map(item => {
             return (
               <div
+                key={item.name}
                 style={{
                   display: 'flex',
                   alignItems: 'center',

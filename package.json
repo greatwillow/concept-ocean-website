@@ -1,8 +1,8 @@
 {
-  "name": "mtlgreen.com",
-  "description": "MtlGreen",
+  "name": "Concept Ocean",
+  "description": "Concept Ocean Website",
   "version": "0.0.1",
-  "author": "Paul Cuciureanu <paulcu@gmail.com>",
+  "author": "Gregory Denys <gregory.g.denys@gmail.com>",
   "dependencies": {
     "bootstrap": "^4.0.0",
     "gatsby": "^1.9.202",
@@ -27,6 +27,7 @@
     "react-fontawesome": "^1.6.1",
     "react-helmet": "^5.2.0",
     "react-mailchimp-subscribe": "^1.0.3",
+    "react-overdrive": "0.0.10",
     "reactstrap": "^5.0.0-beta",
     "recharts": "^1.0.0-beta.10"
   },

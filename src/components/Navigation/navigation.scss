@@ -3,9 +3,10 @@
 .navigation-list {
   display: flex;
   flex-direction: row;
-  justify-content: stretch;
+  justify-content: space-evenly;
   align-items: center;
   flex-grow: 1;
+  padding-right: 30px;
 }
 
 .navigation-item {
@@ -30,11 +31,11 @@
 }
 
 .navigation-item:last-child::after {
-  content: ' ';
+  content: '';
 }
 
 .navigation-item-backlit:last-child::after {
-  display: none;
+  content: '';
 }
 
 .navigation-link {
