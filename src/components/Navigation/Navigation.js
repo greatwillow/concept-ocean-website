@@ -6,30 +6,36 @@ import './navigation.scss';
 class Navigation extends Component {
   render() {
     const NavItem = ({ title, to }) => (
-      <div
+      <Link
+        to={to}
         className={
-          this.props.headerBackgroundShown ? 'navigation-item-backlit' : 'navigation-item'
+          this.props.headerBackgroundShown ? 'navigation-link-backlit' : 'navigation-link'
         }
       >
-        <Link
-          to={to}
-          className={
-            this.props.headerBackgroundShown
-              ? 'navigation-link-backlit'
-              : 'navigation-link'
-          }
-        >
-          {title}
-        </Link>
+        {title}
+      </Link>
+    );
+
+    const NavSpacer = () => (
+      <div
+        className={
+          this.props.headerBackgroundShown
+            ? 'navigation-spacer-backlit'
+            : 'navigation-spacer'
+        }
+      >
+        |
       </div>
     );
 
     return (
       <div className="navigation-list">
-        <NavItem to="/" title="Home" />
         <NavItem to="/about/" title="About" />
+        {/* <NavSpacer /> */}
         <NavItem to="/dev-projects/" title="Dev Projects" />
-        <NavItem to="/other-projects/" title="Other Projects" />
+
+        {/* <NavSpacer /> */}
+        {/* <NavItem to="/other-projects/" title="Other Projects" /> */}
         <NavItem to="/contact/" title="Contact" />
       </div>
     );

@@ -48,6 +48,7 @@ class ImageGrid extends Component {
                   key={node.frontmatter.title}
                   thumbnail={node.frontmatter.thumbnail.childImageSharp.sizes}
                   title={node.frontmatter.title}
+                  slug={node.fields.slug}
                   shortDescription={node.frontmatter.shortDescription}
                 />
               );
@@ -64,6 +65,7 @@ class ImageGrid extends Component {
                   key={node.frontmatter.title}
                   thumbnail={node.frontmatter.thumbnail.childImageSharp.sizes}
                   title={node.frontmatter.title}
+                  slug={node.fields.slug}
                   shortDescription={node.frontmatter.shortDescription}
                 />
               );

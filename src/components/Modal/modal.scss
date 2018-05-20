@@ -1,0 +1,39 @@
+@import '../../styles/variables.scss';
+
+.modal-overlay-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 500;
+}
+
+.modal-container {
+  position: absolute;
+  top: 40px;
+  left: 100px;
+  right: 100px;
+  bottom: 100px;
+  background-color: $color-sky-white;
+  overflow: hidden;
+}
+
+@media (max-width: 700px) {
+  .modal-container {
+    left: 40px;
+    right: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-container {
+    left: 0px;
+    right: 0px;
+  }
+}

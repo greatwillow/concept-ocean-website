@@ -3,44 +3,23 @@
 .navigation-list {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: flex-end;
   align-items: center;
   flex-grow: 1;
-  padding-right: 30px;
 }
 
-.navigation-item {
-  display: flex;
-  justify-content: space-around;
-  flex-grow: 1;
+.navigation-spacer {
+  color: black;
 }
 
-.navigation-item-backlit {
-  display: flex;
-  justify-content: space-around;
-  flex-grow: 1;
-}
-
-.navigation-item::after {
-  content: '|';
-}
-
-.navigation-item-backlit::after {
-  content: '|';
+.navigation-spacer-backlit {
   color: white;
-}
-
-.navigation-item:last-child::after {
-  content: '';
-}
-
-.navigation-item-backlit:last-child::after {
-  content: '';
 }
 
 .navigation-link {
   text-decoration: none;
   color: black;
+  padding-right: 40px;
 }
 
 .navigation-link:hover {
@@ -51,6 +30,7 @@
 .navigation-link-backlit {
   text-decoration: none;
   color: white;
+  padding-right: 40px;
 }
 
 .navigation-link-backlit:hover {

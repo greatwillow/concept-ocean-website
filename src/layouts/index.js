@@ -33,7 +33,6 @@ const TemplateWrapper = ({ children, data }) => (
         top: '250px',
         width: '100%',
         height: '40%',
-        // height: "100%",
         backgroundColor: '#f2f7fa',
         paddingTop: '250px',
         zIndex: '-2'
@@ -45,7 +44,10 @@ const TemplateWrapper = ({ children, data }) => (
       }}
     />
 
-    <Header />
+    <Header
+      conceptOceanIcon={data.conceptOceanIcon.childImageSharp.sizes}
+      circleMenuIcon={data.circleMenuIcon.childImageSharp.sizes}
+    />
     <div>{children()}</div>
   </div>
 );
@@ -57,10 +59,24 @@ TemplateWrapper.propTypes = {
 export default TemplateWrapper;
 
 export const mainLayoutQuery = graphql`
-  query BackgroundImageQuery {
+  query MaineLayoutQuery {
     backgroundImage: file(relativePath: { eq: "img/pure-ocean.png" }) {
       childImageSharp {
         sizes(maxWidth: 2000) {
+          ...GatsbyImageSharpSizes
+        }
+      }
+    }
+    conceptOceanIcon: file(relativePath: { eq: "img/concept-ocean-icon.png" }) {
+      childImageSharp {
+        sizes(maxWidth: 700) {
+          ...GatsbyImageSharpSizes
+        }
+      }
+    }
+    circleMenuIcon: file(relativePath: { eq: "img/circle-menu-icon.png" }) {
+      childImageSharp {
+        sizes(maxWidth: 700) {
           ...GatsbyImageSharpSizes
         }
       }

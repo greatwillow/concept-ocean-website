@@ -1,9 +1,12 @@
+@import '../../styles/variables';
+
 .image-card-container {
   width: 100%;
   height: auto;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   margin-bottom: 30px;
+  cursor: pointer;
 }
 
 .image-card-container:hover {
@@ -33,8 +36,13 @@
   font-size: 18px;
 }
 
+.image-card-horizontal-rule {
+  height: 1px;
+  background-color: $color-bright-green;
+  border: 0px;
+}
+
 .image-card-text-description {
   text-align: center;
-  // padding: 0px 15px 15px 15px;
   font-size: 15px;
 }

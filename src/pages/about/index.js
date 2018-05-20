@@ -7,15 +7,21 @@ import ContactForm from '../../components/ContactForm/ContactForm';
 import Img from 'gatsby-image';
 import Overdrive from 'react-overdrive';
 
-import { languageSkillsData, javascriptSkillsData } from './aboutPageData';
+import {
+  languageSkillsData,
+  javascriptSkillsData,
+  relatedTechSkillsData
+} from './aboutPageData';
 import '../../styles/base.scss';
 import './about.scss';
 
-export default class DevResume extends Component {
+class AboutPage extends Component {
   render() {
     return (
       <CommonPageContainer>
         <div>
+          {/* ============================ SECTION - HEADER ============================= */}
+
           <section id="about-head-section">
             <Img
               className="profile-image"
@@ -31,6 +37,9 @@ export default class DevResume extends Component {
             </div>
           </section>
           <hr />
+
+          {/* ============================ SECTION - SUMMARY ============================= */}
+
           <section className="about-section-container page-section-spacing">
             <div className="page-section-title">Summary</div>
             <div className="page-section-text">
@@ -57,31 +66,59 @@ export default class DevResume extends Component {
             </div>
           </section>
           <hr />
+
+          {/* ============================ SECTION - AREAS OF FOCUS ============================= */}
+
           <section className="about-section-container page-section-spacing">
             <div className="page-section-title">Areas of Focus</div>
             <FocusAreas />
           </section>
           <hr />
+
+          {/* ============================ SECTION - LANGUAGE SKILLS ============================= */}
+
           <section className="about-section-container about-chart-section-container page-section-spacing">
             <div className="page-section-title">Language Skills</div>
-            <RadialBarChart data={languageSkillsData} />
+            <RadialBarChart ref="radialBarChartRef" data={languageSkillsData} />
           </section>
           <hr />
+
+          {/* ============================ SECTION - JAVASCRIPT SKILLS ============================= */}
+
           <section className="about-section-container about-chart-section-container page-section-spacing">
             <div className="page-section-title">Javascript Skills</div>
-            <BarChart data={javascriptSkillsData} />
+            <BarChart
+              data={javascriptSkillsData}
+              fillColor={'#40c4b4'}
+              height={`${javascriptSkillsData.length * 40 + 100}px`}
+            />
           </section>
           <hr />
+
+          {/* ============================ SECTION - OTHER RELATED TECH SKILLS ============================= */}
+
+          <section className="about-section-container about-chart-section-container page-section-spacing">
+            <div className="page-section-title">Related Tech Skills</div>
+            <BarChart
+              data={relatedTechSkillsData}
+              fillColor={'#00404e'}
+              height={`${relatedTechSkillsData.length * 40 + 100}px`}
+            />
+          </section>
+          <hr />
+
+          {/* ============================ SECTION - FINISH ============================= */}
+
           <section className="about-section-container page-section-spacing">
             <div className="page-section-title">Go Further</div>
             <div className="page-section-text">
               <p>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; When I'm not engaged in the movement
-                of a software project or busy thinking about ideas that can improve our
-                world, I can often be found travelling, rock-climbing, playing music, or
-                enjoying my time learning about others and the world around me. If you're
-                curious to learn more, I would be happy to hear from you. Feel free to
-                send a message and I will get back to you soon.
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; When I'm not engaged in software or
+                busy thinking about ideas to change our world, I can often be found
+                travelling, rock-climbing, playing music, or enjoying my time learning
+                about others and the world around me. If you're curious to learn more, I
+                would be happy to hear from you. Feel free to send a message and I will
+                get back to you soon.
               </p>
             </div>
             <ContactForm />
@@ -91,6 +128,9 @@ export default class DevResume extends Component {
     );
   }
 }
+
+export default AboutPage;
+
 export const aboutQuery = graphql`
   query AboutPageQuery {
     profileImage: file(

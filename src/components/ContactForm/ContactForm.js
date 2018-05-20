@@ -10,10 +10,9 @@ class ContactForm extends Component {
           method="POST"
           className="contact-form"
         >
-          <label for="email-address">Your Email Address</label>
+          <label htmlFor="email-address">Your Email Address</label>
           <input type="email" name="email-address" className="contact-form-email-input" />
-          <label for="message">Your Message</label>
-
+          <label htmlFor="message">Your Message</label>
           <textarea name="message" className="contact-form-text-input" />
           <input
             type="submit"

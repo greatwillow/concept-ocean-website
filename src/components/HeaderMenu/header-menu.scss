@@ -1,0 +1,31 @@
+@import '../../styles/variables.scss';
+
+.main-header-menu-container {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  bottom: 320px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: white;
+}
+
+.menu-item-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  background-color: $color-deep-blue;
+  opacity: 0.8;
+  border-bottom: 1px solid $color-deep-blue;
+  color: white;
+  text-decoration: none;
+}
+
+.menu-item-container:hover {
+  background-color: $color-deep-blue;
+  opacity: 0.4;
+}
