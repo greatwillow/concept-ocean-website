@@ -1,14 +1,16 @@
 ---
 title: "GiverTrail"
 thumbnail: "./giver-trail-thumbnail.png"
+images: 
+    - ./images/concept-ocean-content-1.png
+    - ./images/concept-ocean-content-2.png
 shortDescription: "A React-Native app that connects outdoors adventurers with causes they care about."
 ---
 
-GiverTrail aims to be an app for connecting users to causes they care about by rewarding these causes with corporate sponsored dollars that the user earns through their outdoor pursuits.  The idea of this app is that users can earn points based on geotracked location changes, and that those points in turn are exchangeable for dollar amounts that are directly donated by sponsoring corporations to the selected causes.  
+GiverTrail aims to be an app for connecting users to causes they care about by rewarding these causes with corporate sponsored dollars that the user earns through their outdoor pursuits. The idea of this app is that users can earn points based on geotracked location changes, and that those points in turn are exchangeable for dollar amounts that are directly donated by sponsoring corporations to the selected causes.
 
-GiverTrail is a React-Native based app completed as part of my participation in Montreal based Lab12 (see [here](http://www.lab12.ca/)).  Although I had established a fairly advanced coding skillset upon entering Lab12, I felt as though I wanted to use the opportunity to gain more experience working in collaboration with others over a larger scale project which I had felt an urge to develop previously.
+GiverTrail is a React-Native based app completed as part of my participation in Montreal based Lab12 (see [here](http://www.lab12.ca/)). Although I had established a fairly advanced coding skillset upon entering Lab12, I felt as though I wanted to use the opportunity to gain more experience working in collaboration with others over a larger scale project which I had felt an urge to develop previously.
 
-With Lab12, I recruited a four member team to assist in the user story generation of this app.  Although two members of the team chose to leave Lab12 for personal reasons, I worked on designing and then developing the React-Native front end of this app with the help of another teammate who focused on the Node.Js / Mongo.DB backend of the app.  While developing this project, a great deal was shared through our collaboration.
+With Lab12, I recruited a four member team to assist in the user story generation of this app. Although two members of the team chose to leave Lab12 for personal reasons, I worked on designing and then developing the React-Native front end of this app with the help of another teammate who focused on the Node.Js / Mongo.DB backend of the app. While developing this project, a great deal was shared through our collaboration.
 
-Although the development of the core functionality of this app has been accomplished, the development process is currently on hold until a greater understanding of the market model fit for this app is established and greater business resources are available. 
-
+Although the development of the core functionality of this app has been accomplished, the development process is currently on hold until a greater understanding of the market model fit for this app is established and greater business resources are available.

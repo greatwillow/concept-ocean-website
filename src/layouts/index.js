@@ -59,7 +59,7 @@ TemplateWrapper.propTypes = {
 export default TemplateWrapper;
 
 export const mainLayoutQuery = graphql`
-  query MaineLayoutQuery {
+  query MainLayoutQuery {
     backgroundImage: file(relativePath: { eq: "img/pure-ocean.png" }) {
       childImageSharp {
         sizes(maxWidth: 2000) {

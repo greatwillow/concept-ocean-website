@@ -51,21 +51,3 @@ class Modal extends Component {
 }
 
 export default Modal;
-
-export const modalQuery = graphql`
-  query ModalQuery($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      frontmatter {
-        title
-        thumbnail {
-          childImageSharp {
-            sizes(maxWidth: 400) {
-              ...GatsbyImageSharpSizes
-            }
-          }
-        }
-      }
-    }
-  }
-`;

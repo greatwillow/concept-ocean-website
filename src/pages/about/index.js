@@ -131,7 +131,7 @@ class AboutPage extends Component {
 
 export default AboutPage;
 
-export const aboutQuery = graphql`
+export const aboutPageQuery = graphql`
   query AboutPageQuery {
     profileImage: file(
       relativePath: { eq: "pages/about/gregory-denys-profile-photo.png" }

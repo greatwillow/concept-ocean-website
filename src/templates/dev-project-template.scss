@@ -1,10 +1,5 @@
 @import '../styles/variables.scss';
 
-.template-main-container {
-  box-sizing: border-box;
-  height: 100%;
-}
-
 .template-head-container {
   height: 80px;
   display: flex;
@@ -12,25 +7,10 @@
   padding-left: 40px;
   background-color: $color-deep-blue;
   opacity: 0.7;
-}
-
-.template-body-container {
-  box-sizing: border-box;
-  height: 75%;
-  overflow: scroll;
-  padding-right: 40px;
-  padding-left: 40px;
-}
-
-.template-title-text {
-  font-size: 25px;
-  color: white;
-}
-
-.template-summary-excerpt {
-  box-sizing: border-box;
-  line-height: 30px;
-  margin-top: 40px;
+  .template-title-text {
+    font-size: 25px;
+    color: white;
+  }
 }
 
 .template-summary-image {
@@ -41,4 +21,27 @@
   margin-left: 40px;
   margin-bottom: 20px;
   margin-top: 40px;
+}
+.template-summary-excerpt {
+  box-sizing: border-box;
+  line-height: 30px;
+  margin-top: 40px;
+}
+
+.template-body-container {
+  display: flex;
+  flex-direction: column;
+  height: 75%;
+  overflow: scroll;
+  padding-right: 40px;
+  padding-left: 40px;
+  .template-summary-container {
+    display: flex;
+    flex-grow: 1;
+  }
+  .template-carousel-container {
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+  }
 }

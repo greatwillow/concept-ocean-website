@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CommonPageContainer from '../../components/CommonPageContainer/CommonPageContainer';
-import ImageGrid from '../../components/ImageGrid/ImageGrid';
+import ImageCardGrid from '../../components/ImageCardGrid/ImageCardGrid';
 
 import '../../styles/base.scss';
 import './dev-projects.scss';
@@ -14,7 +14,7 @@ class DevProjects extends Component {
         <div className="page-head-title">Dev Projects</div>
         <hr />
         <div className="card-section-container">
-          <ImageGrid dataArray={allDevProjects} />
+          <ImageCardGrid dataArray={allDevProjects} showFullCard={true} />
         </div>
       </CommonPageContainer>
     );

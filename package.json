@@ -1,5 +1,5 @@
 {
-  "name": "Concept Ocean",
+  "name": "Concept-Ocean",
   "description": "Concept Ocean Website",
   "version": "0.0.1",
   "author": "Gregory Denys <gregory.g.denys@gmail.com>",
@@ -24,7 +24,6 @@
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-fontawesome": "^1.6.1",
     "react-helmet": "^5.2.0",
     "react-mailchimp-subscribe": "^1.0.3",
     "react-overdrive": "0.0.10",
@@ -45,6 +44,7 @@
   },
   "devDependencies": {
     "prettier": "^1.5.2",
+    "react-alice-carousel": "^1.9.3",
     "standard": "^10.0.3"
   }
 }
