@@ -14,7 +14,7 @@ class DevProjects extends Component {
         <div className="page-head-title">Dev Projects</div>
         <hr />
         <div className="card-section-container">
-          <ImageCardGrid dataArray={allDevProjects} showFullCard={true} />
+          <ImageCardGrid dataArray={allDevProjects} />
         </div>
       </CommonPageContainer>
     );

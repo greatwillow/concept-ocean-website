@@ -2,8 +2,16 @@
 title: "GiverTrail"
 thumbnail: "./giver-trail-thumbnail.png"
 images: 
-    - ./images/concept-ocean-content-1.png
-    - ./images/concept-ocean-content-2.png
+    - ./images/givertrail-content-1.png
+    - ./images/givertrail-content-2.png
+    - ./images/givertrail-content-3.png
+    - ./images/givertrail-content-4.png
+    - ./images/givertrail-content-5.png
+    - ./images/givertrail-content-6.png
+    - ./images/givertrail-content-7.png
+    - ./images/givertrail-content-8.png
+    - ./images/givertrail-content-9.png
+    - ./images/givertrail-content-10.png
 shortDescription: "A React-Native app that connects outdoors adventurers with causes they care about."
 ---
 

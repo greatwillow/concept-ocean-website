@@ -18,30 +18,30 @@
   float: right;
   width: 40%;
   height: auto;
-  margin-left: 40px;
-  margin-bottom: 20px;
-  margin-top: 40px;
+  margin: 40px 40px 20px 40px;
 }
+
 .template-summary-excerpt {
   box-sizing: border-box;
   line-height: 30px;
-  margin-top: 40px;
+  padding: 20px 40px 40px 40px;
 }
 
 .template-body-container {
   display: flex;
   flex-direction: column;
   height: 75%;
-  overflow: scroll;
-  padding-right: 40px;
-  padding-left: 40px;
-  .template-summary-container {
-    display: flex;
-    flex-grow: 1;
-  }
-  .template-carousel-container {
-    display: flex;
-    flex-grow: 1;
-    width: 100%;
-  }
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.template-summary-container {
+  display: flex;
+  flex-grow: 1;
+}
+
+.template-carousel-container {
+  display: flex;
+  flex-grow: 1;
+  width: 100%;
 }

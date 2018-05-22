@@ -16,21 +16,13 @@ class ImageCardGrid extends Component {
 
   renderItem = (node, index) => {
     return (
-      <div>
-        {this.props.showFullCard ? (
-          <ImageCard
-            key={node.node.frontmatter.title}
-            thumbnail={node.node.frontmatter.thumbnail.childImageSharp.sizes}
-            title={node.node.frontmatter.title}
-            slug={node.node.fields.slug}
-            shortDescription={node.node.frontmatter.shortDescription}
-          />
-        ) : (
-          <div key={index}>
-            <Img className="carousel-item" sizes={{ ...node.childImageSharp.sizes }} />
-          </div>
-        )}
-      </div>
+      <ImageCard
+        key={node.frontmatter.title}
+        thumbnail={node.frontmatter.thumbnail.childImageSharp.sizes}
+        title={node.frontmatter.title}
+        slug={node.fields.slug}
+        shortDescription={node.frontmatter.shortDescription}
+      />
     );
   };
 
@@ -40,32 +32,32 @@ class ImageCardGrid extends Component {
       <div className="image-grid-row">
         {/* FIRST COLUMN */}
         <div className="image-grid-column">
-          {dataArray.map((node, index) => {
+          {dataArray.map(({ node }, index) => {
             let adjustedIndex = this.getAdjustedIndex(index);
             if (
               adjustedIndex % 1 === 0 &&
               adjustedIndex % 2 !== 0 &&
               adjustedIndex % 3 !== 0
             ) {
-              return <div>{this.renderItem(node, index)}</div>;
+              return <div key={index}>{this.renderItem(node, index)}</div>;
             }
           })}
         </div>
         {/* SECOND COLUMN */}
         <div className="image-grid-column">
-          {dataArray.map((node, index) => {
+          {dataArray.map(({ node }, index) => {
             let adjustedIndex = this.getAdjustedIndex(index);
             if (adjustedIndex % 2 === 0 && adjustedIndex % 3 !== 0) {
-              return <div>{this.renderItem(node, index)}</div>;
+              return <div key={index}>{this.renderItem(node, index)}</div>;
             }
           })}
         </div>
         {/* THIRD COLUMN */}
         <div className="image-grid-column">
-          {dataArray.map((node, index) => {
+          {dataArray.map(({ node }, index) => {
             let adjustedIndex = this.getAdjustedIndex(index);
             if (adjustedIndex % 3 === 0) {
-              return <div>{this.renderItem(node, index)}</div>;
+              return <div key={index}>{this.renderItem(node, index)}</div>;
             }
           })}
         </div>

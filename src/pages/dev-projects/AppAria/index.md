@@ -2,8 +2,10 @@
 title: "AppAria"
 thumbnail: "./apparia-thumbnail.png"
 images: 
-    - ./images/concept-ocean-content-1.png
-    - ./images/concept-ocean-content-2.png
+    - ./images/apparia-content-1.png
+    - ./images/apparia-content-2.png
+    - ./images/apparia-content-3.png
+    - ./images/apparia-content-4.png
 shortDescription: "A set of apps using Vue.Js and React.Js that connect Therapists to their patients."
 ---
 

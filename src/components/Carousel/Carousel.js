@@ -3,23 +3,6 @@ import Img from 'gatsby-image';
 
 import './carousel.scss';
 
-class CarouselIndicator extends Component {
-  render() {
-    return (
-      <li>
-        <a
-          className={
-            this.props.index == this.props.activeIndex
-              ? 'carousel-indicator carousel-indicator-active'
-              : 'carousel-indicator'
-          }
-          onClick={this.props.onClick}
-        />
-      </li>
-    );
-  }
-}
-
 class Carousel extends Component {
   constructor(props) {
     super(props);
@@ -71,7 +54,7 @@ class Carousel extends Component {
   renderCarouselSlides = slides => {
     return slides.map((slide, index) => {
       return (
-        <li
+        <div
           key={index}
           className={
             index == this.state.activeIndex
@@ -79,57 +62,62 @@ class Carousel extends Component {
               : 'carousel-slide'
           }
         >
-          <div key={index}>
-            <Img sizes={{ ...slide.childImageSharp.sizes }} />
+          {/* ============================ CHEVRON LEFT ============================= */}
+
+          <div
+            className="carousel-arrow carousel-arrow-left"
+            onClick={e => this.goToPreviousSlide(e)}
+          >
+            <Img sizes={{ ...this.props.iconChevronLeft }} />
           </div>
-        </li>
+
+          {/* ============================ SLIDE IMAGE ============================= */}
+
+          <Img
+            className="carousel-slide-image"
+            sizes={{ ...slide.childImageSharp.sizes }}
+          />
+
+          {/* ============================ CHEVRON RIGHT ============================= */}
+
+          <div
+            className="carousel-arrow carousel-arrow-right"
+            onClick={e => this.goToNextSlide(e)}
+          >
+            <Img sizes={{ ...this.props.iconChevronRight }} />
+          </div>
+        </div>
       );
     });
   };
 
   render() {
     return (
-      <div className="carousel-container">
-        <div className="carousel">
-          {/* ============================ CHEVRON LEFT ============================= */}
-
-          <a
-            href="#"
-            className="carousel-arrow carousel-arrow-left"
-            onClick={e => this.goToPreviousSlide(e)}
-          >
-            <Img sizes={{ ...this.props.iconChevronLeft }} />
-          </a>
-
+      <div className="carousel-main-container">
+        <div className="carousel-inner-container">
           {/* ============================ CAROUSEL SLIDES ============================= */}
 
-          <ul className="carousel-slides">
-            {this.renderCarouselSlides(this.props.slides)}
-          </ul>
-
-          {/* ============================ CHEVRON RIGHT ============================= */}
-
-          <a
-            href="#"
-            className="carousel-arrow carousel-arrow-right"
-            onClick={e => this.goToNextSlide(e)}
-          >
-            <Img sizes={{ ...this.props.iconChevronRight }} />
-          </a>
+          {this.renderCarouselSlides(this.props.slides)}
 
           {/* ============================ CAROUSEL BOTTOM INDICATOR ============================= */}
-
-          <ul className="carousel-indicators">
-            {this.props.slides.map((slide, index) => (
-              <CarouselIndicator
-                key={index}
-                index={index}
-                activeIndex={this.state.activeIndex}
-                isActive={this.state.activeIndex == index}
-                onClick={e => this.goToSlide(index)}
-              />
-            ))}
-          </ul>
+        </div>
+        <div
+          className="carousel-indicators"
+          style={{ width: `${this.props.slides.length * 80}px` }}
+        >
+          {this.props.slides.map((slide, index) => (
+            <div
+              key={index}
+              className={
+                index == this.state.activeIndex
+                  ? 'carousel-indicator carousel-indicator-active'
+                  : 'carousel-indicator'
+              }
+              onClick={e => this.goToSlide(index)}
+            >
+              <Img style={{ width: '60px' }} sizes={{ ...slide.childImageSharp.sizes }} />
+            </div>
+          ))}
         </div>
       </div>
     );
