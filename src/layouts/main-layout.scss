@@ -7,14 +7,6 @@ body {
   background-image: linear-gradient($color-sky-white, $color-deep-blue);
 }
 
-// .top-spacer-container {
-//   width: 100%;
-//   height: 250px;
-//   background-color: #f2f7fa;
-//   font-family: $font-family-megrim;
-//   z-index: -2;
-// }
-
 .logo-outer-container {
   position: absolute;
   top: 150px;
@@ -61,15 +53,3 @@ body {
   font-size: 20px;
   color: white;
 }
-
-/* @media screen and (max-width: 1024px) {
-    .background-image {
-      left: 50%;
-      margin-left: -300px; 
-    }
-  } */
-
-/* @font-face {
-    font-family: 'linowrite';
-    src: url('../linowrite.ttf') format('ttf')
-  } */

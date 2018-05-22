@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'conceptocean.com',
+    title: 'conceptocean.co',
     description: 'Personal software development projects site of Gregory Denys',
-    url: 'https://www.conceptocean.com',
+    url: 'https://www.conceptocean.co',
     github: 'https://github.com/greatwillow',
     author: {
       name: 'Gregory Denys',
