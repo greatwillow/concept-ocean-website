@@ -6,7 +6,7 @@ import Modal from '../Modal/Modal';
 
 import './image-card.scss';
 
-class ProjectCard extends Component {
+class ImageCard extends Component {
   render() {
     return (
       <Link to={this.props.slug} style={{ textDecoration: 'none', color: 'black' }}>
@@ -30,4 +30,4 @@ class ProjectCard extends Component {
   }
 }
 
-export default ProjectCard;
+export default ImageCard;

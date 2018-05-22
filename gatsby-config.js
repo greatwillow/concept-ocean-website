@@ -1,6 +1,13 @@
 module.exports = {
   siteMetadata: {
-    title: 'Concept Ocean'
+    title: 'conceptocean.com',
+    description: 'Personal software development projects site of Gregory Denys',
+    url: 'https://www.conceptocean.com',
+    github: 'https://github.com/greatwillow',
+    author: {
+      name: 'Gregory Denys',
+      email: 'gregory.g.denys@gmail.com'
+    }
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -54,26 +61,26 @@ module.exports = {
       }
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`
+    `gatsby-plugin-sharp`,
 
-    //IMAGES AND SHARP
-    // {
-    //   resolve: `gatsby-plugin-favicon`,
-    //   options: {
-    //     logo: "./src/favicon.png",
-    //     injectHTML: true,
-    //     icons: {
-    //       android: true,
-    //       appleIcon: true,
-    //       appleStartup: true,
-    //       coast: false,
-    //       favicons: true,
-    //       firefox: true,
-    //       twitter: false,
-    //       yandex: false,
-    //       windows: false
-    //     }
-    //   }
-    // }
+    //FAVICON
+    {
+      resolve: `gatsby-plugin-favicon`,
+      options: {
+        logo: './src/favicon.png',
+        injectHTML: true,
+        icons: {
+          android: true,
+          appleIcon: true,
+          appleStartup: true,
+          coast: false,
+          favicons: true,
+          firefox: true,
+          twitter: false,
+          yandex: false,
+          windows: false
+        }
+      }
+    }
   ]
 };

@@ -1,65 +1,74 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
-import Helmet from 'react-helmet';
 import Img from 'gatsby-image';
-
 import Header from '../components/Header/Header';
+import SiteMetaInformation from './SiteMetaInformation';
+
 import './main-layout.scss';
 
-const TemplateWrapper = ({ children, data }) => (
-  <div>
-    <Helmet
-      title="Concept Ocean"
-      meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' }
-      ]}
-    />
-    <div className="logo-outer-container">
-      <div className="logo-text">
-        C_<br />_O
+class MainLayout extends Component {
+  render() {
+    return (
+      <div>
+        <SiteMetaInformation siteMetadata={this.props.data.siteMetadata.siteMetadata} />
+        <div className="logo-outer-container">
+          <div className="logo-text">
+            C_<br />_O
+          </div>
+        </div>
+        <div className="title-container">
+          <div className="title-text">Concept Ocean</div>
+          <div className="subtitle-text">Projects of Gregory Denys</div>
+        </div>
+        <Img
+          title="Background image"
+          style={{
+            position: 'absolute',
+            left: '0',
+            top: '250px',
+            width: '100%',
+            height: '40%',
+            backgroundColor: '#f2f7fa',
+            paddingTop: '250px',
+            zIndex: '-2'
+          }}
+          alt="View of a calm ocean washed in pink"
+          sizes={{
+            ...this.props.data.backgroundImage.childImageSharp.sizes,
+            aspectRatio: 1 / 1
+          }}
+        />
+
+        <Header
+          iconConceptOcean={this.props.data.iconConceptOcean.childImageSharp.sizes}
+          iconCircleMenu={this.props.data.iconCircleMenu.childImageSharp.sizes}
+          iconCross={this.props.data.iconCross.childImageSharp.sizes}
+        />
+        <div>{this.props.children()}</div>
       </div>
-    </div>
-    <div className="title-container">
-      <div className="title-text">Concept Ocean</div>
-      <div className="subtitle-text">Projects of Gregory Denys</div>
-    </div>
-    <Img
-      title="Background image"
-      style={{
-        position: 'absolute',
-        left: '0',
-        top: '250px',
-        width: '100%',
-        height: '40%',
-        backgroundColor: '#f2f7fa',
-        paddingTop: '250px',
-        zIndex: '-2'
-      }}
-      alt="View of a calm ocean washed in pink"
-      sizes={{
-        ...data.backgroundImage.childImageSharp.sizes,
-        aspectRatio: 1 / 1
-      }}
-    />
+    );
+  }
+}
 
-    <Header
-      conceptOceanIcon={data.conceptOceanIcon.childImageSharp.sizes}
-      circleMenuIcon={data.circleMenuIcon.childImageSharp.sizes}
-    />
-    <div>{children()}</div>
-  </div>
-);
+export default MainLayout;
 
-TemplateWrapper.propTypes = {
+MainLayout.propTypes = {
   children: PropTypes.func
 };
 
-export default TemplateWrapper;
-
 export const mainLayoutQuery = graphql`
   query MainLayoutQuery {
+    siteMetadata: site {
+      siteMetadata {
+        title
+        url
+        description
+        author {
+          name
+        }
+      }
+    }
     backgroundImage: file(relativePath: { eq: "img/pure-ocean.png" }) {
       childImageSharp {
         sizes(maxWidth: 2000) {
@@ -67,16 +76,23 @@ export const mainLayoutQuery = graphql`
         }
       }
     }
-    conceptOceanIcon: file(relativePath: { eq: "img/concept-ocean-icon.png" }) {
+    iconConceptOcean: file(relativePath: { eq: "img/icon-concept-ocean.png" }) {
       childImageSharp {
         sizes(maxWidth: 700) {
           ...GatsbyImageSharpSizes
         }
       }
     }
-    circleMenuIcon: file(relativePath: { eq: "img/circle-menu-icon.png" }) {
+    iconCircleMenu: file(relativePath: { eq: "img/icon-circle-menu.png" }) {
       childImageSharp {
-        sizes(maxWidth: 700) {
+        sizes(maxWidth: 400) {
+          ...GatsbyImageSharpSizes
+        }
+      }
+    }
+    iconCross: file(relativePath: { eq: "img/icon-cross.png" }) {
+      childImageSharp {
+        sizes(maxWidth: 400) {
           ...GatsbyImageSharpSizes
         }
       }

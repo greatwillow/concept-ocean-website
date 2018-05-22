@@ -16,26 +16,10 @@ class Navigation extends Component {
       </Link>
     );
 
-    const NavSpacer = () => (
-      <div
-        className={
-          this.props.headerBackgroundShown
-            ? 'navigation-spacer-backlit'
-            : 'navigation-spacer'
-        }
-      >
-        |
-      </div>
-    );
-
     return (
       <div className="navigation-list">
         <NavItem to="/about/" title="About" />
-        {/* <NavSpacer /> */}
         <NavItem to="/dev-projects/" title="Dev Projects" />
-
-        {/* <NavSpacer /> */}
-        {/* <NavItem to="/other-projects/" title="Other Projects" /> */}
         <NavItem to="/contact/" title="Contact" />
       </div>
     );

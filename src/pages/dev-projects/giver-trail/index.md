@@ -3,15 +3,15 @@ title: "GiverTrail"
 thumbnail: "./giver-trail-thumbnail.png"
 images: 
     - ./images/givertrail-content-1.png
-    - ./images/givertrail-content-2.png
-    - ./images/givertrail-content-3.png
+    # - ./images/givertrail-content-2.png
+    # - ./images/givertrail-content-3.png
     - ./images/givertrail-content-4.png
     - ./images/givertrail-content-5.png
     - ./images/givertrail-content-6.png
-    - ./images/givertrail-content-7.png
+    # - ./images/givertrail-content-7.png
     - ./images/givertrail-content-8.png
-    - ./images/givertrail-content-9.png
-    - ./images/givertrail-content-10.png
+    # - ./images/givertrail-content-9.png
+    # - ./images/givertrail-content-10.png
 shortDescription: "A React-Native app that connects outdoors adventurers with causes they care about."
 ---
 
@@ -22,3 +22,5 @@ GiverTrail is a React-Native based app completed as part of my participation in 
 With Lab12, I recruited a four member team to assist in the user story generation of this app. Although two members of the team chose to leave Lab12 for personal reasons, I worked on designing and then developing the React-Native front end of this app with the help of another teammate who focused on the Node.Js / Mongo.DB backend of the app. While developing this project, a great deal was shared through our collaboration.
 
 Although the development of the core functionality of this app has been accomplished, the development process is currently on hold until a greater understanding of the market model fit for this app is established and greater business resources are available.
+
+<a href="https://github.com/greatwillow/giver-trail-frontend" target="_blank">View it on Github</a>.

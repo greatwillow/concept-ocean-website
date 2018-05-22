@@ -7,7 +7,7 @@ import {
   ResponsiveContainer
 } from 'recharts';
 
-export default class RadialChart extends Component {
+class RadialChart extends Component {
   constructor() {
     super();
     this.state = {
@@ -19,6 +19,7 @@ export default class RadialChart extends Component {
     };
   }
 
+  // ============================ LIFECYCLE METHODS =============================
   componentDidMount() {
     this.updateChartLayout();
     window.addEventListener('resize', this.updateChartLayout);
@@ -28,6 +29,7 @@ export default class RadialChart extends Component {
     window.removeEventListener('resize', this.updateChartLayout);
   }
 
+  // ============================ RESPONSIVE DIMENSIONS =============================
   updateChartLayout = () => {
     if (window.innerWidth >= 600) {
       this.setState({
@@ -48,6 +50,7 @@ export default class RadialChart extends Component {
     }
   };
 
+  // ============================ RENDERING =============================
   render() {
     let newData = this.props.data.map(item => {
       return item;
@@ -66,6 +69,8 @@ export default class RadialChart extends Component {
             width: this.state.legendWidth
           }}
         >
+          {/* ============================ MAPPING OVER ITEMS ============================= */}
+
           {newData.reverse().map(item => {
             return (
               <div
@@ -95,6 +100,8 @@ export default class RadialChart extends Component {
             height: '300px'
           }}
         >
+          {/* ============================ RENDERING RADIAL CHART ============================= */}
+
           <ResponsiveContainer width={'100%'} height={300}>
             <RadialBarChart
               innerRadius={20}
@@ -112,3 +119,5 @@ export default class RadialChart extends Component {
     );
   }
 }
+
+export default RadialChart;

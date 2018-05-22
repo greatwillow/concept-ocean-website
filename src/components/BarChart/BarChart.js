@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from 'recharts';
 
-export default class Demo extends Component {
+class BarChartComponent extends Component {
   render() {
     return (
       <div style={{ width: '100%', height: this.props.height }}>
@@ -20,3 +20,5 @@ export default class Demo extends Component {
     );
   }
 }
+
+export default BarChartComponent;

@@ -125,7 +125,7 @@ class Header extends Component {
               <Img
                 className={window.scrollY > 50 ? 'header-icon-inverted' : 'header-icon'}
                 sizes={{
-                  ...this.props.conceptOceanIcon,
+                  ...this.props.iconConceptOcean,
                   aspectRatio: 1 / 1
                 }}
               />
@@ -141,13 +141,23 @@ class Header extends Component {
           {/*} ============================ SECTION - HEADER RIGHT ============================= */}
 
           <div className="header-right-container" onClick={this.toggleMenu}>
-            <Img
-              className={window.scrollY > 50 ? 'header-icon-inverted' : 'header-icon'}
-              sizes={{
-                ...this.props.circleMenuIcon,
-                aspectRatio: 1 / 1
-              }}
-            />
+            {this.state.menuShown ? (
+              <Img
+                className={window.scrollY > 50 ? 'header-icon-inverted' : 'header-icon'}
+                sizes={{
+                  ...this.props.iconCross,
+                  aspectRatio: 1 / 1
+                }}
+              />
+            ) : (
+              <Img
+                className={window.scrollY > 50 ? 'header-icon-inverted' : 'header-icon'}
+                sizes={{
+                  ...this.props.iconCircleMenu,
+                  aspectRatio: 1 / 1
+                }}
+              />
+            )}
           </div>
 
           {/*} ============================ MENU ============================= */}

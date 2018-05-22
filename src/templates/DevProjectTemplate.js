@@ -21,6 +21,7 @@ class DevProjectTemplate extends Component {
     const projectImages = this.props.data.markdownRemark.frontmatter.images;
     const iconChevronLeft = this.props.data.iconChevronLeft.childImageSharp.sizes;
     const iconChevronRight = this.props.data.iconChevronRight.childImageSharp.sizes;
+    const iconCross = this.props.data.iconCross.childImageSharp.sizes;
 
     return (
       <Modal>
@@ -28,6 +29,13 @@ class DevProjectTemplate extends Component {
 
         <div className="template-head-container">
           <div className="template-title-text">{post.frontmatter.title}</div>
+          <div
+            onClick={() => {
+              window.history.back();
+            }}
+          >
+            <Img className="icon-cross" sizes={{ ...iconCross }} />
+          </div>
         </div>
 
         {/* ============================ BODY / SUMMARY ============================= */}
@@ -92,6 +100,13 @@ export const devProjectTemplateQuery = graphql`
       }
     }
     iconChevronRight: file(relativePath: { eq: "img/icon-chevron-right.png" }) {
+      childImageSharp {
+        sizes(maxWidth: 400) {
+          ...GatsbyImageSharpSizes
+        }
+      }
+    }
+    iconCross: file(relativePath: { eq: "img/icon-cross.png" }) {
       childImageSharp {
         sizes(maxWidth: 400) {
           ...GatsbyImageSharpSizes

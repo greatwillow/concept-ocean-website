@@ -101,10 +101,7 @@ class Carousel extends Component {
 
           {/* ============================ CAROUSEL BOTTOM INDICATOR ============================= */}
         </div>
-        <div
-          className="carousel-indicators"
-          style={{ width: `${this.props.slides.length * 80}px` }}
-        >
+        <div className="carousel-indicators">
           {this.props.slides.map((slide, index) => (
             <div
               key={index}

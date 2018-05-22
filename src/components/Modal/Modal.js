@@ -4,6 +4,7 @@ import Img from 'gatsby-image';
 import './modal.scss';
 
 class Modal extends Component {
+  // ============================ LIFECYCLE METHODS =============================
   componentDidMount = () => {
     window.addEventListener('keyup', this.handleKeyUp, false);
     document.addEventListener('click', this.handleOutsideClick, false);
@@ -14,6 +15,7 @@ class Modal extends Component {
     document.removeEventListener('click', this.handleOutsideClick, false);
   };
 
+  // ============================ USER CLOSE ON Esc. OR TAP OUTSIDE =============================
   handleKeyUp = e => {
     const keys = {
       27: () => {
@@ -39,6 +41,7 @@ class Modal extends Component {
     }
   };
 
+  // ============================ RENDERING =============================
   render() {
     return (
       <div className="modal-overlay-container">
