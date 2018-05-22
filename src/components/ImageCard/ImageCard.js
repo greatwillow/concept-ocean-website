@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Link from 'gatsby-link';
 import Img from 'gatsby-image';
-import Overdrive from 'react-overdrive';
 import Modal from '../Modal/Modal';
 
 import './image-card.scss';

@@ -1,10 +1,18 @@
 {
-  "name": "Concept-Ocean",
+  "name": "conceptocean.co",
   "description": "Concept Ocean Website",
-  "version": "0.0.1",
-  "author": "Gregory Denys <gregory.g.denys@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "serve": "gatsby serve",
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/greatwillow/concept-ocean-website"
+  },
   "dependencies": {
-    "bootstrap": "^4.0.0",
     "gatsby": "^1.9.202",
     "gatsby-image": "^1.0.42",
     "gatsby-link": "^1.6.37",
@@ -25,26 +33,10 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-helmet": "^5.2.0",
-    "react-mailchimp-subscribe": "^1.0.3",
-    "react-overdrive": "0.0.10",
-    "reactstrap": "^5.0.0-beta",
     "recharts": "^1.0.0-beta.10"
-  },
-  "keywords": [
-    "gatsby",
-    "green"
-  ],
-  "license": "MIT",
-  "main": "n/a",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
     "prettier": "^1.5.2",
-    "react-alice-carousel": "^1.9.3",
     "standard": "^10.0.3"
   }
 }

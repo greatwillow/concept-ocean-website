@@ -5,7 +5,6 @@ import BarChart from '../../components/BarChart/BarChart';
 import FocusAreas from '../../components/FocusAreas/FocusAreas';
 import ContactForm from '../../components/ContactForm/ContactForm';
 import Img from 'gatsby-image';
-import Overdrive from 'react-overdrive';
 
 import {
   languageSkillsData,
