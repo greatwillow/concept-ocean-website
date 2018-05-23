@@ -36,7 +36,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       }
     `).then(result => {
       result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-        console.log('CREATING PAGE ', node, 'with slug ', node.fields.slug);
         createPage({
           path: node.fields.slug,
           component: path.resolve(`./src/templates/DevProjectTemplate.js`),
