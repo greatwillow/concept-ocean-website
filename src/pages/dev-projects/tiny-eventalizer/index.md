@@ -1,8 +1,7 @@
 ---
 title: "The Tiny Eventalizer"
 thumbnail: "./tiny-eventalizer-thumbnail.png"
-images: 
-    - ./images/tiny-eventalizer-content-1.png
+images: - ./images/tiny-eventalizer-content-1.png
     - ./images/tiny-eventalizer-content-2.png
     - ./images/tiny-eventalizer-content-3.png
     - ./images/tiny-eventalizer-content-4.png

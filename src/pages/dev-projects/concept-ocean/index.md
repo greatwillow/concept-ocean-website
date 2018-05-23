@@ -1,8 +1,7 @@
 ---
 title: "Concept Ocean"
 thumbnail: "./concept-ocean-thumbnail.png"
-images: 
-    - ./images/concept-ocean-content-3.png
+images: - ./images/concept-ocean-content-3.png
     - ./images/concept-ocean-content-4.png
     - ./images/concept-ocean-content-5.png
     - ./images/concept-ocean-content-6.png
