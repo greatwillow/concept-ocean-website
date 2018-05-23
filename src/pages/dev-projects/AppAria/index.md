@@ -1,7 +1,8 @@
 ---
 title: "AppAria"
 thumbnail: "./apparia-thumbnail.png"
-images: - ./images/apparia-content-1.png
+images: 
+    - ./images/apparia-content-1.png
     - ./images/apparia-content-2.png
     - ./images/apparia-content-3.png
     - ./images/apparia-content-4.png

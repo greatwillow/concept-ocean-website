@@ -1,7 +1,8 @@
 ---
 title: "GiverTrail"
 thumbnail: "./giver-trail-thumbnail.png"
-images: - ./images/givertrail-content-1.png
+images: 
+    - ./images/givertrail-content-1.png
     - ./images/givertrail-content-4.png
     - ./images/givertrail-content-5.png
     - ./images/givertrail-content-6.png
