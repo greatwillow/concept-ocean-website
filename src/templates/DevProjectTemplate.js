@@ -16,6 +16,12 @@ class DevProjectTemplate extends Component {
     document.body.style.overflowY = 'scroll';
   };
 
+  closeModal = () => {
+    if (window) {
+      window.history.back();
+    }
+  };
+
   render() {
     const post = this.props.data.markdownRemark;
     const projectImages = this.props.data.markdownRemark.frontmatter.images;
@@ -29,11 +35,7 @@ class DevProjectTemplate extends Component {
 
         <div className="template-head-container">
           <div className="template-title-text">{post.frontmatter.title}</div>
-          <div
-            onClick={() => {
-              window.history.back();
-            }}
-          >
+          <div onClick={() => this.closeModal()}>
             <Img className="icon-cross" sizes={{ ...iconCross }} />
           </div>
         </div>

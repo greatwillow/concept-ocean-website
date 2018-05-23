@@ -123,7 +123,11 @@ class Header extends Component {
           >
             <Link to="/">
               <Img
-                className={window.scrollY > 50 ? 'header-icon-inverted' : 'header-icon'}
+                className={
+                  this.state.headerBackgroundShown
+                    ? 'header-icon-inverted'
+                    : 'header-icon'
+                }
                 sizes={{
                   ...this.props.iconConceptOcean,
                   aspectRatio: 1 / 1
@@ -143,7 +147,11 @@ class Header extends Component {
           <div className="header-right-container" onClick={this.toggleMenu}>
             {this.state.menuShown ? (
               <Img
-                className={window.scrollY > 50 ? 'header-icon-inverted' : 'header-icon'}
+                className={
+                  this.state.headerBackgroundShown
+                    ? 'header-icon-inverted'
+                    : 'header-icon'
+                }
                 sizes={{
                   ...this.props.iconCross,
                   aspectRatio: 1 / 1
@@ -151,7 +159,11 @@ class Header extends Component {
               />
             ) : (
               <Img
-                className={window.scrollY > 50 ? 'header-icon-inverted' : 'header-icon'}
+                className={
+                  this.state.headerBackgroundShown
+                    ? 'header-icon-inverted'
+                    : 'header-icon'
+                }
                 sizes={{
                   ...this.props.iconCircleMenu,
                   aspectRatio: 1 / 1

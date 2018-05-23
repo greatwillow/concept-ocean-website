@@ -3,8 +3,6 @@ import Helmet from 'react-helmet';
 
 class SiteMetaInformation extends Component {
   render() {
-    console.log('PRRRROPS ', this.props);
-    console.log('THIS ', this);
     const siteMetadata = this.props.siteMetadata;
     return (
       <Helmet
