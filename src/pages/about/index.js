@@ -10,7 +10,7 @@ import {
   languageSkillsData,
   javascriptSkillsData,
   relatedTechSkillsData
-} from './aboutPageData';
+} from '../../data/aboutPageData';
 import '../../styles/base.scss';
 import './about.scss';
 

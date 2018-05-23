@@ -1,6 +1,9 @@
-import React from 'react';
-import Helmet from 'react-helmet';
+import React, { Component } from 'react';
 
-export default function Index({ data }) {
-  return <div />;
+class MainPage extends Component {
+  render() {
+    return <div />;
+  }
 }
+
+export default MainPage;
