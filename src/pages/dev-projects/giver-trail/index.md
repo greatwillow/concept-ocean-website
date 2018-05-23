@@ -18,4 +18,8 @@ With Lab12, I recruited a four member team to assist in the user story generatio
 
 Although the development of the core functionality of this app has been accomplished, the development process is currently on hold until a greater understanding of the market model fit for this app is established and greater business resources are available.
 
-<a href="https://github.com/greatwillow/giver-trail-frontend" target="_blank">View it on Github</a>.
+* View it on Github <a href="https://github.com/greatwillow/giver-trail-frontend" target="_blank">here</a>.
+
+* View a short film demonstration of the app in action <a href="https://docs.google.com/file/d/1YdDKNzI3CcvKEZnBAVI0evhJU5e-xXMs/preview" target="_blank">here</a>.
+
+* View a fun promotional film for the initial presentation of the app <a href="https://docs.google.com/file/d/1aOiWrW4kaLR4-sHn2m6VCr92g7nuqsgO/preview" target="_blank">here</a>.
