@@ -22,11 +22,11 @@ export const javascriptSkillsData = [
   },
   {
     name: 'Vue.Js',
-    pv: 80
+    pv: 85
   },
   {
     name: 'Gatsby.Js',
-    pv: 75
+    pv: 70
   },
   {
     name: 'Node.Js',
@@ -34,18 +34,22 @@ export const javascriptSkillsData = [
   },
   {
     name: 'Express.Js',
-    pv: 65
+    pv: 70
   },
   {
     name: 'MongoDB',
     pv: 65
   },
   {
-    name: 'PostreSQL',
-    pv: 40
+    name: 'Rx.Js',
+    pv: 55
   },
   {
-    name: 'Jest',
+    name: 'Typescript',
+    pv: 50
+  },
+  {
+    name: 'Front-End Testing',
     pv: 40
   }
 ];
@@ -61,6 +65,10 @@ export const relatedTechSkillsData = [
   },
   {
     name: 'Adobe InDesign',
+    pv: 60
+  },
+  {
+    name: 'SCSS / Styled',
     pv: 70
   },
   {
@@ -74,5 +82,9 @@ export const relatedTechSkillsData = [
   {
     name: 'ArcGIS',
     pv: 75
+  },
+  {
+    name: 'PostreSQL',
+    pv: 40
   }
 ];

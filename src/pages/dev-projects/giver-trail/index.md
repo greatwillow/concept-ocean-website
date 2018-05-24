@@ -1,4 +1,5 @@
 ---
+date: "2017-11-00"
 title: "GiverTrail"
 thumbnail: "./giver-trail-thumbnail.png"
 images: 

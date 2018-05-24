@@ -1,4 +1,5 @@
 ---
+date: "2017-12-01"
 title: "AppAria"
 thumbnail: "./apparia-thumbnail.png"
 images: 

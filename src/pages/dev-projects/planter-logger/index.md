@@ -1,4 +1,5 @@
 ---
+date: "2016-05-00"
 title: "Plantr Logr"
 thumbnail: "./planter-logger-thumbnail.png"
 images: 

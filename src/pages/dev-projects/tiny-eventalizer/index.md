@@ -1,4 +1,5 @@
 ---
+date: "2017-12-00"
 title: "The Tiny Eventalizer"
 thumbnail: "./tiny-eventalizer-thumbnail.png"
 images: 
