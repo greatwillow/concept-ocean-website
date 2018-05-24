@@ -38,7 +38,7 @@ class SiteMetaInformation extends Component {
           },
           {
             property: 'og:site_name',
-            content: 'conceptocean.com'
+            content: 'conceptocean.co'
           }
         ]}
       />
