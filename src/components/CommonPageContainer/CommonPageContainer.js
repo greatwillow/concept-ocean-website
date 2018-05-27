@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./common-page-container.css";
+import "./common-page-container.scss";
 
 class CommonPageContainer extends Component {
   render() {

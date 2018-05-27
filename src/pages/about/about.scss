@@ -4,7 +4,9 @@
   position: absolute;
   top: 20px;
   left: 50%;
-  transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
   border-radius: 50%;
   width: 150px;
 }
@@ -34,9 +36,16 @@
     position: absolute;
     margin-top: 30px;
     left: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    transform: translate(-50%, 0);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-transform: translate(-50%, 0);
+        -ms-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
     font-size: 25px;
     text-align: center;
   }
@@ -45,3 +54,4 @@
     margin-top: 5px;
   }
 }
+

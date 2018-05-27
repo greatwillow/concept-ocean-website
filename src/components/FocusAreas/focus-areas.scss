@@ -4,11 +4,17 @@
 }
 
 .focus-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   color: white;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-align: center;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .inner-container-1 {

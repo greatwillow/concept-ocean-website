@@ -4,6 +4,9 @@ body {
   margin: 0;
   font-family: $font-family-base;
   font-weight: 100;
+  background-image: -webkit-gradient(linear, left top, left bottom, from($color-sky-white), to($color-deep-blue));
+  background-image: -webkit-linear-gradient($color-sky-white, $color-deep-blue);
+  background-image: -o-linear-gradient($color-sky-white, $color-deep-blue);
   background-image: linear-gradient($color-sky-white, $color-deep-blue);
 }
 
@@ -11,7 +14,9 @@ body {
   position: absolute;
   top: 150px;
   left: 50%;
-  transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
   width: 200px;
   height: 200px;
   border-radius: 50%;
@@ -21,9 +26,15 @@ body {
 }
 
 .logo-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 100%;
   width: 100%;
   font-family: $font-family-megrim;

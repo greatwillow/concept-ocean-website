@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './focus-areas.css';
+import './focus-areas.scss';
 
 class FocusAreas extends Component {
   render() {
