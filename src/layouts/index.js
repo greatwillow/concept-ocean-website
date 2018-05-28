@@ -8,6 +8,24 @@ import SiteMetaInformation from './SiteMetaInformation';
 import './main-layout.scss';
 
 class MainLayout extends Component {
+
+  componentDidMount = () => {
+      this.setBackground();
+  }
+
+  componentWillUpdate = () => {
+      this.setBackground();
+  }
+
+  setBackground = () => {
+    if(window.location.pathname === '/'){
+      document.getElementsByTagName("BODY")[0].style.backgroundImage = 'none';
+      document.getElementsByTagName("BODY")[0].style.backgroundColor = '#f2f7fa';
+    } else {
+      document.getElementsByTagName("BODY")[0].style.backgroundImage = 'linear-gradient(rgb(241,247,250), rgb(0,64,78))';
+    }
+  }
+
   render() {
     return (
       <div>

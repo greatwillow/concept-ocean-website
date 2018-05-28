@@ -4,10 +4,10 @@ body {
   margin: 0;
   font-family: $font-family-base;
   font-weight: 100;
-  background-image: -webkit-gradient(linear, left top, left bottom, from($color-sky-white), to($color-deep-blue));
-  background-image: -webkit-linear-gradient($color-sky-white, $color-deep-blue);
-  background-image: -o-linear-gradient($color-sky-white, $color-deep-blue);
-  background-image: linear-gradient($color-sky-white, $color-deep-blue);
+  // background-image: -webkit-gradient(linear, left top, left bottom, from($color-sky-white), to($color-deep-blue));
+  // background-image: -webkit-linear-gradient($color-sky-white, $color-deep-blue);
+  // background-image: -o-linear-gradient($color-sky-white, $color-deep-blue);
+  // background-image: linear-gradient($color-sky-white, $color-deep-blue);
 }
 
 .logo-outer-container {
